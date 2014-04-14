@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+  <title>Anti Scammer</title>
+
+  <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/semantic.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+  <script src="{{ URL::asset('assets/js/semantic.js') }}"></script>
+  <script src="{{ URL::asset('assets/js/style.js') }}"></script>
+
+</head>
+<body>
+  <!-- Top Menu -->
+  <div class="ui teal inverted small menu">
+    <a href="{{ url('/') }}" class="item">
+      <i class="home icon"></i> Home
+    </a>
+    <a href="{{ url('/client') }}" class="item">
+      <i class="users icon"></i>
+      Client
+    </a>
+    <a class="item">
+      <i class="grid layout icon"></i> Browse
+    </a>
+    <a class="item">
+      <i class="mail icon"></i> Messages
+    </a>
+    <div class="right menu">
+      <div class="ui dropdown item">
+        More <i class="icon dropdown"></i>
+        <div class="menu">
+          <a class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a class="item"><i class="globe icon"></i> Choose Language</a>
+          <a class="item"><i class="settings icon"></i> Account Settings</a>
+        </div>
+      </div>
+      <div class="mini ui buttons">
+        <div class="ui button">Sign in</div>
+        <div class="ui button">Register</div>
+      </div>
+    </div>
+  </div>
+  
+  @yield('message')
+
+  @yield('content')
+  
+</body>
+</html>
