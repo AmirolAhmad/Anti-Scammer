@@ -17,12 +17,26 @@
 
 </head>
 <body>
+<?php
+$current_url = $_SERVER['REQUEST_URI'];
+$current_page = end((explode('/', $current_url)));
+$home = '';
+$client = '';
+switch($current_page){
+    case 'client':
+        $client = 'active';
+        break;
+    default:
+        $home = 'active';
+        break;
+}
+?>
   <!-- Top Menu -->
   <div class="ui teal inverted small menu">
-    <a href="{{ url('/') }}" class="item">
+    <a href="{{ url('/') }}" class="{{ $home }} item">
       <i class="home icon"></i> Home
     </a>
-    <a href="{{ url('/client') }}" class="item">
+    <a href="{{ url('/client') }}" class="{{ $client }} item">
       <i class="users icon"></i>
       Client
     </a>
