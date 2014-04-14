@@ -32,7 +32,7 @@ switch($current_page){
 }
 ?>
   <!-- Top Menu -->
-  <div class="ui teal inverted small menu">
+  <div class="ui teal inverted small menu no-border">
     <a href="{{ url('/') }}" class="{{ $home }} item">
       <i class="home icon"></i> Home
     </a>
@@ -46,18 +46,19 @@ switch($current_page){
     <a class="item">
       <i class="mail icon"></i> Messages
     </a>
+    <div class="item">
+      <a class="red ui icon button" data-content="File a report" href="{{ URL::route('report') }}">
+        <i class="edit icon"></i>
+      </a>
+    </div>
     <div class="right menu">
       <div class="ui dropdown item">
-        More <i class="icon dropdown"></i>
+        <i class="setting icon"></i> More <i class="icon dropdown"></i>
         <div class="menu">
           <a class="item"><i class="edit icon"></i> Edit Profile</a>
           <a class="item"><i class="globe icon"></i> Choose Language</a>
           <a class="item"><i class="settings icon"></i> Account Settings</a>
         </div>
-      </div>
-      <div class="mini ui buttons">
-        <div class="ui button">Sign in</div>
-        <div class="ui button">Register</div>
       </div>
     </div>
   </div>
