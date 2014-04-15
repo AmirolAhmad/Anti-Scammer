@@ -7,7 +7,7 @@
 	<h2 class="ui header">
 	  <i class="settings icon"></i>
 	  <div class="content">
-	    Register
+	    Register a new account
 	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
 	  </div>
 	</h2>
@@ -47,7 +47,7 @@
 	  <div class="field">
 	    <label>Password</label>
 	    <div class="ui left labeled icon input">
-	      <input placeholder="Password" type="password" name="password">
+	      <input placeholder="Password" type="password" name="password" data-content="Should not less than 8 characters.">
 	      <i class="lock icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
@@ -57,7 +57,7 @@
 	  <div class="field">
 	    <label>Confirm Password</label>
 	    <div class="ui left labeled icon input">
-	      <input placeholder="Confirm Password" type="password" name="password_confirmation">
+	      <input placeholder="Confirm Password" type="password" name="password_confirmation" data-content="Should match with above password.">
 	      <i class="lock icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
@@ -66,7 +66,7 @@
 	  </div>
 	  <div class="inline field">
 	    <div class="ui checkbox">
-	      <input type="checkbox">
+	      <input name="terms" type="checkbox">
 	      <label>I agree to the Terms and Conditions</label>
 	    </div>
 	  </div>
@@ -75,7 +75,7 @@
 	    <p>{{ $error }}</p>
 	  </div>
 	  @endforeach
-	  <input type="submit" class="ui blue submit button" value="Create">
+	  <button type="submit" class="ui small teal submit button"><i class="add sign icon"></i>Create my account</button>
 	</div>
 	{{ Form::close() }}
 

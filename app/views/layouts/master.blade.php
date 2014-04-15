@@ -23,11 +23,15 @@ $current_page = end((explode('/', $current_url)));
 $home = '';
 $login = '';
 $register = '';
+$help = '';
 switch($current_page){
     case 'login':
         $login = 'active';
         break;
     case 'register':
+        $register = 'active';
+        break;
+    case 'help':
         $register = 'active';
         break;
     default:
@@ -36,7 +40,7 @@ switch($current_page){
 }
 ?>
   <!-- Top Menu -->
-  <div class="ui teal inverted small menu no-border">
+  <div class="ui red inverted small menu no-border">
     <a href="{{ url('/') }}" class="{{ $home }} item">
       <i class="home icon"></i> Home
     </a>
@@ -47,41 +51,43 @@ switch($current_page){
       <i class="mail icon"></i> Messages
     </a>
 
-    <?php if (Session::has('user')) { ?>
-    <div class="item">
-      <a class="red ui icon button" data-content="File a report" href="{{ URL::route('report') }}">
-        <i class="edit icon"></i>
-      </a>
-    </div>
-    <?php } else { ?>
-    <div class="item">
-      <a class="red ui icon button" data-content="File a report" href="{{ URL::route('login') }}">
-        <i class="edit icon"></i>
-      </a>
-    </div>
-    <?php } ?>
+    @if(Auth::check())
+    <a class="item" href="{{ URL::route('report') }}">
+      <i class="edit icon"></i> Submit a report
+    </a>
+    @else
+    <a class="item" href="{{ URL::route('login') }}">
+      <i class="edit icon"></i> Submit a report
+    </a>
+    @endif
 
     <div class="right menu">
-      <?php if (!Session::has('user')) { ?>
+    <div class="item">
+      <div class="ui icon small input">
+        <input placeholder="Search..." type="text" data-content="Insert your search query here.">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+      @if(Auth::check())
+      <div class="ui dropdown item">
+        <img class="ui avatar image" src="<?= Gravatar::src(Auth::user()->email) ?>"> {{ Auth::user()->fullname }} <i class="icon dropdown"></i>
+        <div class="menu">
+          <a href="{{ url('/edit') }}" class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a href="{{ url('/change-password') }}" class="item"><i class="key icon"></i> Change Password</a>
+          <a href="{{ url('/logout') }}" class="item"><i class="off icon"></i> Logout</a>
+        </div>
+      </div>
+      @else
       <a href="{{ url('/register') }}" class="{{ $register }} item">
         <i class="user icon"></i> Register
       </a>
       <a href="{{ url('/login') }}" class="{{ $login }} item">
         <i class="key icon"></i> Login
       </a>
-      <?php } ?>
-      
-      <?php if (Session::has('user')) { ?>
-      <div class="ui dropdown item">
-        <img class="ui avatar image" src="<?= Gravatar::src(Auth::user()->email) ?>"> {{ Auth::user()->fullname }} <i class="icon dropdown"></i>
-        <div class="menu">
-          <a href="{{ url('/edit') }}" class="item"><i class="edit icon"></i> Edit Profile</a>
-          <a href="{{ url('/change-password') }}" class="item"><i class="key icon"></i> Change Password</a>
-          <a class="item"><i class="settings icon"></i> Account Settings</a>
-          <a href="{{ url('/logout') }}" class="item"><i class="off icon"></i> Logout</a>
-        </div>
-      </div>
-      <?php } ?>
+      @endif
+      <a href="{{ url('/help') }}" class="{{ $help }} icon ui item" data-content="Need help?">
+        <i class="help icon"></i>
+      </a>
     </div>
   </div>
   

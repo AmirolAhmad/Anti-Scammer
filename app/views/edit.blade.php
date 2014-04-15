@@ -5,7 +5,7 @@
 <div class="container-login">
 
 	<h2 class="ui header">
-	  <i class="settings icon"></i>
+	  <i class="edit icon"></i>
 	  <div class="content">
 	    Edit Profile
 	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
@@ -57,7 +57,7 @@
 	    <p>{{ $error }}</p>
 	  </div>
 	  @endforeach
-	  <input type="submit" class="ui blue submit button" value="Update">
+	  <button type="submit" class="ui small teal submit button"><i class="edit icon"></i> Update my profile</button>
 	</div>
 	{{ Form::close() }}
 

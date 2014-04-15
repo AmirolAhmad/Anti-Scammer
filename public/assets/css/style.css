@@ -35,3 +35,8 @@ body {
   width: 600px;
   margin: 0 auto;
 }
+
+.ui.menu:not(.vertical) .item > .input {
+  vertical-align: middle;
+  width: 320px;
+}

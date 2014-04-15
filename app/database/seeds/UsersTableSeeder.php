@@ -6,12 +6,13 @@ class UsersTableSeeder extends Seeder {
 
 		$users = array(
 			array(
-				'name' 		=> 'AmirolAhmad',
-				'fullname' 	=> 'Amirol Ahmad',
-				'password' 	=> Hash::make('password'),
-				'email' 	=> 'test@testmail.com',
-				'code' 		=> '',
-				'active' 	=> ''
+				'name' 					=> 'AmirolAhmad',
+				'fullname' 			=> 'Amirol Ahmad',
+				'password' 			=> Hash::make('password'),
+				'password_temp' => '',
+				'email' 				=> 'test@testmail.com',
+				'code' 					=> '',
+				'active' 				=> ''
 			)
 		);
 

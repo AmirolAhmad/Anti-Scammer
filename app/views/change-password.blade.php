@@ -5,7 +5,7 @@
 <div class="container-login">
 
 	<h2 class="ui header">
-	  <i class="settings icon"></i>
+	  <i class="key icon"></i>
 	  <div class="content">
 	    Change Password
 	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
@@ -33,7 +33,7 @@
 	  <div class="field">
 	    <label>New Password</label>
 	    <div class="ui left labeled icon input">
-	      <input type="password" name="password">
+	      <input type="password" name="password" data-content="Should not less than 8 characters.">
 	      <i class="lock icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
@@ -43,7 +43,7 @@
 	  <div class="field">
 	    <label>Confirm Password</label>
 	    <div class="ui left labeled icon input">
-	      <input type="password" name="password_confirmation">
+	      <input type="password" name="password_confirmation" data-content="Should match with above password.">
 	      <i class="lock icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
@@ -55,7 +55,7 @@
 	    <p>{{ $error }}</p>
 	  </div>
 	  @endforeach
-	  <input type="submit" class="ui blue submit button" value="Update">
+	  <button type="submit" class="ui small teal submit button"><i class="key icon"></i> Update my password</button>
 	</div>
 	{{ Form::close() }}
 

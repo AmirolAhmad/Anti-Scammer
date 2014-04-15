@@ -21,10 +21,18 @@
 $current_url = $_SERVER['REQUEST_URI'];
 $current_page = end((explode('/', $current_url)));
 $home = '';
-$client = '';
+$login = '';
+$register = '';
+$help = '';
 switch($current_page){
-    case 'client':
-        $client = 'active';
+    case 'login':
+        $login = 'active';
+        break;
+    case 'register':
+        $register = 'active';
+        break;
+    case 'help':
+        $register = 'active';
         break;
     default:
         $home = 'active';
@@ -32,13 +40,9 @@ switch($current_page){
 }
 ?>
   <!-- Top Menu -->
-  <div class="ui teal inverted small menu no-border">
+  <div class="ui red inverted small menu no-border">
     <a href="<?php echo url('/'); ?>" class="<?php echo $home; ?> item">
       <i class="home icon"></i> Home
-    </a>
-    <a href="<?php echo url('/client'); ?>" class="<?php echo $client; ?> item">
-      <i class="users icon"></i>
-      Client
     </a>
     <a class="item">
       <i class="grid layout icon"></i> Browse
@@ -46,20 +50,44 @@ switch($current_page){
     <a class="item">
       <i class="mail icon"></i> Messages
     </a>
-    <div class="item">
-      <a class="red ui icon button" data-content="File a report" href="<?php echo URL::route('report'); ?>">
-        <i class="edit icon"></i>
-      </a>
-    </div>
+
+    <?php if(Auth::check()): ?>
+    <a class="item" href="<?php echo URL::route('report'); ?>">
+      <i class="edit icon"></i> Submit a report
+    </a>
+    <?php else: ?>
+    <a class="item" href="<?php echo URL::route('login'); ?>">
+      <i class="edit icon"></i> Submit a report
+    </a>
+    <?php endif; ?>
+
     <div class="right menu">
+    <div class="item">
+      <div class="ui icon small input">
+        <input placeholder="Search..." type="text" data-content="Insert your search query here.">
+        <i class="search link icon"></i>
+      </div>
+    </div>
+      <?php if(Auth::check()): ?>
       <div class="ui dropdown item">
-        <i class="setting icon"></i> More <i class="icon dropdown"></i>
+        <img class="ui avatar image" src="<?= Gravatar::src(Auth::user()->email) ?>"> <?php echo Auth::user()->fullname; ?> <i class="icon dropdown"></i>
         <div class="menu">
-          <a class="item"><i class="edit icon"></i> Edit Profile</a>
-          <a class="item"><i class="globe icon"></i> Choose Language</a>
-          <a class="item"><i class="settings icon"></i> Account Settings</a>
+          <a href="<?php echo url('/edit'); ?>" class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a href="<?php echo url('/change-password'); ?>" class="item"><i class="key icon"></i> Change Password</a>
+          <a href="<?php echo url('/logout'); ?>" class="item"><i class="off icon"></i> Logout</a>
         </div>
       </div>
+      <?php else: ?>
+      <a href="<?php echo url('/register'); ?>" class="<?php echo $register; ?> item">
+        <i class="user icon"></i> Register
+      </a>
+      <a href="<?php echo url('/login'); ?>" class="<?php echo $login; ?> item">
+        <i class="key icon"></i> Login
+      </a>
+      <?php endif; ?>
+      <a href="<?php echo url('/help'); ?>" class="<?php echo $help; ?> icon ui item" data-content="Need help?">
+        <i class="help icon"></i>
+      </a>
     </div>
   </div>
   

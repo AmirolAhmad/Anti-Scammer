@@ -2,7 +2,13 @@
 
 @section('content')
 <div class="container">
-	<h1>File a new report</h1>
+	<h2 class="ui header">
+	  <i class="file icon"></i>
+	  <div class="content">
+	    File a new report
+	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
+	  </div>
+	</h2>
 	
 	{{ Form::open() }}
 	<div class="ui error form segment">
@@ -93,7 +99,7 @@
 	      <i class="building icon"></i>
 	    </div>
 	  </div>
-	  <input type="submit" class="ui blue submit button" value="Submit">
+	  <button type="submit" class="ui teal submit button"><i class="file icon"></i> Submit my report</button>
 	</div>
 	{{ Form::close() }}
 

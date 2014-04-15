@@ -10,8 +10,15 @@ $(document).ready(function() {
 	  $(this).closest('.message').fadeOut();
 	});
 
-	$('.ui.button').popup({
+  $('.ui.item').popup({
+    position : 'bottom left',
     on: 'hover'
   });
+
+  $('input').popup({
+    on: 'focus'
+  });
+
+  $('.ui.checkbox').checkbox();
 
 });

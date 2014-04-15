@@ -41,7 +41,7 @@ return array(
 	|
 	*/
 
-	'port' => 465,
+	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -54,7 +54,7 @@ return array(
 	|
 	*/
 
-	'from' => array('address' => '9w2pdf@gmail.com', 'name' => 'Anti-Scammer Auth'),
+	'from' => array('address' => 'enquiries@osemnetwork.com.my', 'name' => 'Anti-Scammer Auth'),
 
 	/*
 	|--------------------------------------------------------------------------
@@ -93,7 +93,7 @@ return array(
 	|
 	*/
 
-	'password' => NULL,
+	'password' => 'wfahtaooxrtcvqdv',
 
 	/*
 	|--------------------------------------------------------------------------

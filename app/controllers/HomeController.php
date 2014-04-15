@@ -4,16 +4,6 @@ class HomeController extends BaseController {
 
 	protected $layout = 'layouts.master';
 
-	public function home() {
-		/*
-		Mail::send('emails.auth.test', array('name' => 'Anti-Scammer'), function($message) {
-			$message->to('lisa.andria11@gmail.com', 'Evalisa Andria')->subject('Test Email');
-		});
-		*/
-
-		return View::make('home');
-	}
-
 	public function getIndex() {
 		// Fetch all the data from the specific user
 		//$reports = Auth::user()->reports;

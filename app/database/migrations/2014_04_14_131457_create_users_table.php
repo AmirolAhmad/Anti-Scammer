@@ -17,6 +17,7 @@ class CreateUsersTable extends Migration {
 			$table->string('name');
 			$table->string('fullname');
 			$table->string('password');
+			$table->string('password_temp');
 			$table->string('email');
 			$table->string('code');
 			$table->integer('active');
