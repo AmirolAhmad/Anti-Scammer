@@ -22,6 +22,10 @@ body {
   border-radius: 0;
 }
 
+.ui.menu .item {
+  line-height: 2em;
+}
+
 .container {
   padding: 0 10px 10px;
 }

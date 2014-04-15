@@ -4,8 +4,22 @@ class HomeController extends BaseController {
 
 	protected $layout = 'layouts.master';
 
+	public function home() {
+		/*
+		Mail::send('emails.auth.test', array('name' => 'Anti-Scammer'), function($message) {
+			$message->to('lisa.andria11@gmail.com', 'Evalisa Andria')->subject('Test Email');
+		});
+		*/
+
+		return View::make('home');
+	}
+
 	public function getIndex() {
-		$reports = Auth::user()->reports;
+		// Fetch all the data from the specific user
+		//$reports = Auth::user()->reports;
+
+		// Fetch all the data from report table
+		$reports = DB::table('reports')->get();
 
 		return View::make('home', array(
 			'reports' => $reports
@@ -46,6 +60,72 @@ class HomeController extends BaseController {
 
 		return Redirect::route('home');
 
+	}
+
+	public function getProfile() {
+		$user = DB::table('users')->where('id', Auth::user()->id)->first();
+
+		return View::make('edit', array(
+			'user' => $user
+		));
+	}
+
+	public function updateProfile() {
+		$rules = array(
+			'fullname' 					=> 'required|min:3',
+			'email' 					=> 'required|email'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if ($validator->fails()) {
+			return Redirect::route('edit')->withErrors($validator);
+		}
+
+		$edit 				= User::find(Auth::user()->id);
+		$edit->fullname 	= Input::get('fullname');
+		$edit->email 		= Input::get('email');
+		$edit->save();
+
+		return Redirect::route('edit')->with('success', 'Your profile has been update.');
+	}
+
+	public function getPassword() {
+		return View::make('change-password');
+	}
+
+	public function updatePassword() {
+		$rules = array(
+			'current_password' 			=> 'required',
+			'password' 					=> 'required|min:8',
+			'password_confirmation'		=> 'required|same:password'
+		);
+
+		$validator = Validator::make(Input::all(), $rules);
+
+		if($validator->fails()) {
+
+			return Redirect::route('change-password')->withErrors($validator);
+
+		} else {
+
+			$user 				= User::find(Auth::user()->id);
+
+			$current_password 	= Input::get('current_password');
+			$password 			= Input::get('password');
+
+			if(Hash::check($current_password, $user->getAuthPassword())) {
+				$user->password = Hash::make($password);
+
+				if($user->save()) {
+					return Redirect::route('change-password')->with('success', 'Your password has been update.');
+				}
+			} else {
+				return Redirect::route('change-password')->with('global', 'Your current password is incorrect.');
+			}
+		}
+
+		return Redirect::route('change-password')->with('global', 'Your password could not be changed.');
 	}
 
 }

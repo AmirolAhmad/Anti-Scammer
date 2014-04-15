@@ -18,6 +18,8 @@ class CreateUsersTable extends Migration {
 			$table->string('fullname');
 			$table->string('password');
 			$table->string('email');
+			$table->string('code');
+			$table->integer('active');
 			$table->timestamps();
 		});
 	}

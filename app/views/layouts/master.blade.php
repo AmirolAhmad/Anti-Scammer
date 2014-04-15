@@ -21,10 +21,14 @@
 $current_url = $_SERVER['REQUEST_URI'];
 $current_page = end((explode('/', $current_url)));
 $home = '';
-$client = '';
+$login = '';
+$register = '';
 switch($current_page){
-    case 'client':
-        $client = 'active';
+    case 'login':
+        $login = 'active';
+        break;
+    case 'register':
+        $register = 'active';
         break;
     default:
         $home = 'active';
@@ -36,30 +40,48 @@ switch($current_page){
     <a href="{{ url('/') }}" class="{{ $home }} item">
       <i class="home icon"></i> Home
     </a>
-    <a href="{{ url('/client') }}" class="{{ $client }} item">
-      <i class="users icon"></i>
-      Client
-    </a>
     <a class="item">
       <i class="grid layout icon"></i> Browse
     </a>
     <a class="item">
       <i class="mail icon"></i> Messages
     </a>
+
+    <?php if (Session::has('user')) { ?>
     <div class="item">
       <a class="red ui icon button" data-content="File a report" href="{{ URL::route('report') }}">
         <i class="edit icon"></i>
       </a>
     </div>
+    <?php } else { ?>
+    <div class="item">
+      <a class="red ui icon button" data-content="File a report" href="{{ URL::route('login') }}">
+        <i class="edit icon"></i>
+      </a>
+    </div>
+    <?php } ?>
+
     <div class="right menu">
+      <?php if (!Session::has('user')) { ?>
+      <a href="{{ url('/register') }}" class="{{ $register }} item">
+        <i class="user icon"></i> Register
+      </a>
+      <a href="{{ url('/login') }}" class="{{ $login }} item">
+        <i class="key icon"></i> Login
+      </a>
+      <?php } ?>
+      
+      <?php if (Session::has('user')) { ?>
       <div class="ui dropdown item">
-        <i class="setting icon"></i> More <i class="icon dropdown"></i>
+        <img class="ui avatar image" src="<?= Gravatar::src(Auth::user()->email) ?>"> {{ Auth::user()->fullname }} <i class="icon dropdown"></i>
         <div class="menu">
-          <a class="item"><i class="edit icon"></i> Edit Profile</a>
-          <a class="item"><i class="globe icon"></i> Choose Language</a>
+          <a href="{{ url('/edit') }}" class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a href="{{ url('/change-password') }}" class="item"><i class="key icon"></i> Change Password</a>
           <a class="item"><i class="settings icon"></i> Account Settings</a>
+          <a href="{{ url('/logout') }}" class="item"><i class="off icon"></i> Logout</a>
         </div>
       </div>
+      <?php } ?>
     </div>
   </div>
   

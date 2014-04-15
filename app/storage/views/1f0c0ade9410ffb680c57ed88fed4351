@@ -1,0 +1,65 @@
+
+<?php $__env->startSection('content'); ?>
+
+<div class="container-login">
+
+	<h2 class="ui header">
+	  <i class="settings icon"></i>
+	  <div class="content">
+	    Edit Profile
+	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
+	  </div>
+	</h2>
+
+	<?php echo Form::open(array('autocomplete' => 'off')); ?>
+	<div class="ui error form segment">
+	  <?php if(Session::has('success')): ?>
+	  <div class="ui blue message"><?php echo Session::get('success'); ?></div>
+	  <?php endif; ?>
+	  <div class="field">
+	  	<center>
+	  		<div class="ui fade reveal">
+		  		<img class="visible circular ui image content" src="<?= Gravatar::src(Auth::user()->email, 200) ?>">
+		  		<img class="hidden circular ui image content" src="<?= Gravatar::src('lisa.andria11@gmail.com', 200) ?>">
+		  	</div>
+	  	</center>
+	  </div>
+	  <div class="field">
+	    <label>Full Name</label>
+	    <div class="ui left labeled icon input">
+	      <input type="text" name="fullname" value="<?php echo Auth::user()->fullname; ?>">
+	      <i class="user icon"></i>
+	      <div class="ui corner label">
+	        <i class="icon asterisk"></i>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="field">
+	    <label>Email Address</label>
+	    <div class="ui left labeled icon input">
+	      <input type="email" name="email" value="<?php echo Auth::user()->email; ?>">
+	      <i class="mail icon"></i>
+	      <div class="ui corner label">
+	        <i class="icon asterisk"></i>
+	      </div>
+	    </div>
+	  </div>
+	  <div class="field">
+	    <label>Username</label>
+	    <div class="ui left labeled icon input">
+	      <input disabled="disabled" type="text" name="name" value="<?php echo Auth::user()->name; ?>">
+	      <i class="user icon"></i>
+	    </div>
+	  </div>
+	  <?php foreach ($errors->all() as $error): ?>
+	  <div class="ui error message">
+	    <p><?php echo $error; ?></p>
+	  </div>
+	  <?php endforeach; ?>
+	  <input type="submit" class="ui blue submit button" value="Update">
+	</div>
+	<?php echo Form::close(); ?>
+
+</div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
