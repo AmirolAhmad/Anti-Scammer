@@ -24,6 +24,7 @@ $home = '';
 $login = '';
 $register = '';
 $help = '';
+$report = '';
 switch($current_page){
     case 'login':
         $login = 'active';
@@ -31,8 +32,11 @@ switch($current_page){
     case 'register':
         $register = 'active';
         break;
+    case 'report':
+        $report = 'active';
+        break;
     case 'help':
-        $register = 'active';
+        $help = 'active';
         break;
     default:
         $home = 'active';
@@ -52,11 +56,11 @@ switch($current_page){
     </a>
 
     @if(Auth::check())
-    <a class="item" href="{{ URL::route('report') }}">
+    <a class="{{ $report }} item" href="{{ URL::route('report') }}">
       <i class="edit icon"></i> Submit a report
     </a>
     @else
-    <a class="item" href="{{ URL::route('login') }}">
+    <a class="{{ $report }} item" href="{{ URL::route('login') }}">
       <i class="edit icon"></i> Submit a report
     </a>
     @endif

@@ -54,18 +54,18 @@
 	    </div>
 	  </div>
 	  <div class="field">
-	    <div class="ui left labeled icon input">
-	      <input placeholder="Country" type="text" name="country">
-	      <i class="globe icon"></i>
-	      <div class="ui corner label">
-	        <i class="icon asterisk"></i>
-	      </div>
+	  	<div class="ui small compact menu">
+	  		<div class="ui simple">
+	  			<div class="menu">
+						<?php echo Form::select('country', $country_options, NULL, array('class' => 'item')); ?>
+					</div>
+				</div>
 			  <?php foreach ($errors->get('country') as $error): ?>
 			  <div class="ui red pointing above ui label">
 			    <?php echo $error; ?>
 			  </div>
 			  <?php endforeach; ?>
-	    </div>
+			</div>
 	  </div>
 	  <div class="field">
 	    <div class="ui left labeled icon input">

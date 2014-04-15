@@ -17,7 +17,8 @@ class HomeController extends BaseController {
 	}
 
 	public function getReport() {
-		return View::make('report');
+		$country_options = array('' => 'Please Select Your Country') + Country::lists('name', 'name');
+		return View::make('report')->with('country_options',$country_options);
 	}
 
 	public function postReport() {
