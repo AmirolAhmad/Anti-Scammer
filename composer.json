@@ -5,7 +5,8 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.1.*",
-		"thomaswelton/laravel-gravatar": "0.0.x"
+		"thomaswelton/laravel-gravatar": "0.0.x",
+		"webpatser/laravel-countries": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
