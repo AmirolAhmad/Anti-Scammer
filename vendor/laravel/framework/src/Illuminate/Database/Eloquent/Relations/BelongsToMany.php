@@ -556,19 +556,17 @@ class BelongsToMany extends Relation {
 	}
 
 	/**
-	 * Sync the intermediate tables with a list of IDs or collection of models.
+	 * Sync the intermediate tables with a list of IDs.
 	 *
-	 * @param  $ids
+	 * @param  array  $ids
 	 * @param  bool   $detaching
 	 * @return array
 	 */
-	public function sync($ids, $detaching = true)
+	public function sync(array $ids, $detaching = true)
 	{
 		$changes = array(
 			'attached' => array(), 'detached' => array(), 'updated' => array()
 		);
-
-		if ($ids instanceof Collection) $ids = $ids->modelKeys();
 
 		// First we need to attach any of the associated models that are not currently
 		// in this joining table. We'll spin through the given IDs, checking to see

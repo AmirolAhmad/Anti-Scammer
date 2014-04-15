@@ -3304,11 +3304,3 @@ Stack trace:
 #11 /Users/amirolahmad/Documents/Projects/Anti-Scammer/public/index.php(49): Illuminate\Foundation\Application->run()
 #12 /Users/amirolahmad/Documents/Projects/Anti-Scammer/server.php(19): require_once('/Users/amirolah...')
 #13 {main} [] []
-[2014-04-15 18:53:22] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class User contains 3 abstract methods and must therefore be declared abstract or implement the remaining methods (Illuminate\Auth\UserInterface::getRememberToken, Illuminate\Auth\UserInterface::setRememberToken, Illuminate\Auth\UserInterface::getRememberTokenName)' in /Users/amirolahmad/Documents/Projects/Anti-Scammer/app/models/User.php:59
-Stack trace:
-#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
-#1 {main} [] []
-[2014-04-15 18:53:40] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Class User contains 3 abstract methods and must therefore be declared abstract or implement the remaining methods (Illuminate\Auth\UserInterface::getRememberToken, Illuminate\Auth\UserInterface::setRememberToken, Illuminate\Auth\UserInterface::getRememberTokenName)' in /Users/amirolahmad/Documents/Projects/Anti-Scammer/app/models/User.php:59
-Stack trace:
-#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
-#1 {main} [] []
