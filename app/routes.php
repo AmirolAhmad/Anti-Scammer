@@ -33,7 +33,7 @@ Route::group(array('before' => 'guest'), function() {
 	Route::get('/account/reset/{code}', array('as' => 'account-reset', 'uses' => 'AuthController@getReset'));
 
 	/* View Specific Report (GET) */
-	Route::get('/report/{reportid}', array('as' => 'view-report', 'uses' => 'HomeController@getViewReport'));
+	Route::get('/view', array('as' => 'view', 'uses' => 'HomeController@getViewReport'));
 
 });
 

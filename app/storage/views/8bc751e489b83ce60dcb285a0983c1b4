@@ -44,9 +44,9 @@
         <td><?php echo $report->subject; ?></td>
         <td><?php echo $report->location; ?>, <?php echo $report->country; ?></td>
         <td>
-          <div class="icon mini teal ui button" data-content="View more info">
+          <a href="<?php echo url('/view'); ?>" class="icon mini teal ui button" data-content="View more info">
             <i class="info icon"></i>
-          </div>
+          </a>
           <div class="icon mini red ui button" data-content="Click to copy the URL">
             <i class="external url icon"></i>
           </div>

@@ -1,0 +1,10 @@
+
+<?php $__env->startSection('content'); ?>
+
+<div class="container">
+	<h1><?php echo $report->scammer_name; ?></h1>
+	<h1><?php echo $report->scammer_email; ?></h1>
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -45,9 +45,9 @@
         <td>{{ $report->subject }}</td>
         <td>{{ $report->location }}, {{ $report->country }}</td>
         <td>
-          <div class="icon mini teal ui button" data-content="View more info">
+          <a href="{{ url('/view') }}" class="icon mini teal ui button" data-content="View more info">
             <i class="info icon"></i>
-          </div>
+          </a>
           <div class="icon mini red ui button" data-content="Click to copy the URL">
             <i class="external url icon"></i>
           </div>

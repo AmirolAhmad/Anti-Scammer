@@ -139,7 +139,7 @@ class HomeController extends BaseController {
 			$user 				= User::find(Auth::user()->id);
 
 			$current_password 	= Input::get('current_password');
-			$password 			= Input::get('password');
+			$password 					= Input::get('password');
 
 			if(Hash::check($current_password, $user->getAuthPassword())) {
 				$user->password = Hash::make($password);
@@ -153,6 +153,17 @@ class HomeController extends BaseController {
 		}
 
 		return Redirect::route('change-password')->with('global', 'Your password could not be changed.');
+	}
+
+	public function getViewReport() {
+
+		//$report = DB::table('reports')->get();
+		$report = DB::table('reports')->where('id', 1)->first();
+
+		return View::make('view', array(
+			'report' => $report
+		));
+
 	}
 
 }
