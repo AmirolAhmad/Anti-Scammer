@@ -11,6 +11,7 @@ class UsersTableSeeder extends Seeder {
 				'password' 			=> Hash::make('password'),
 				'password_temp' => '',
 				'email' 				=> 'test@testmail.com',
+				'remember_token'=> '',
 				'code' 					=> '',
 				'active' 				=> ''
 			)
