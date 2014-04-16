@@ -38,7 +38,9 @@
       <?php foreach ($reports as $report): ?>
       <tr>
         <td><?php echo $report->reporter; ?></td>
-        <td><?php echo $report->scammer_name; ?></td>
+        <td>
+          <img class="ui avatar image" src="<?php echo URL::to($report->profile_picture);; ?>"> <?php echo $report->scammer_name; ?>
+        </td>
         <td><?php echo $report->subject; ?></td>
         <td><?php echo $report->location; ?>, <?php echo $report->country; ?></td>
         <td>

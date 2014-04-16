@@ -6,39 +6,24 @@ class ReportsTableSeeder extends Seeder {
 
 		$reports = array(
 			array(
-				'owner_id' 			=> 1,
-				'subject' 			=> 'Mencuri hati aku',
-				'reporter' 			=> 'Amirol Ahmad',
+				'owner_id' 				=> 1,
+				'reporter' 				=> 'Amirol Ahmad',
 				'scammer_name' 		=> 'Evalisa Andria',
-				'location' 			=> 'P. Pinang',
-				'country' 			=> 'Malaysia',
+				'nickname' 				=> 'Lisha',
+				'scammer_email' 	=> 'lisa-cute@testmail.com',
+				'age' 						=> '32',
+				'dob' 						=> '20/03/1982',
+				'nationality' 		=> 'Indonesia',
+				'ic_number' 			=> 'A5785657',
+				'profile_picture' => '',
+				'attachment' 			=> '',
+				'subject' 				=> 'Mencuri hati aku',
+				'location' 				=> 'P. Pinang',
+				'country' 				=> 'Malaysia',
 				'contact_number' 	=> '60107152123',
-				'acc_bank_number' 	=> '163464526832',
-				'bank_name' 		=> 'Maybank'
-			),
-
-			array(
-				'owner_id' 			=> 1,
-				'subject' 			=> 'Beli barang tak dapat',
-				'reporter' 			=> 'Amirol Ahmad',
-				'scammer_name' 		=> 'Johan Kamil',
-				'location' 			=> 'Perak',
-				'country' 			=> 'Malaysia',
-				'contact_number' 	=> '60196452235',
-				'acc_bank_number' 	=> '274638746298',
-				'bank_name' 		=> 'CIMB'
-			),
-
-			array(
-				'owner_id' 			=> 1,
-				'subject' 			=> 'Lepas bayar RM10k terus hilang',
-				'reporter' 			=> 'Amirol Ahmad',
-				'scammer_name' 		=> 'Syaza Arina',
-				'location' 			=> 'Selangor',
-				'country' 			=> 'Malaysia',
-				'contact_number' 	=> '60136635264',
-				'acc_bank_number' 	=> '225487532546',
-				'bank_name' 		=> 'Maybank'
+				'acc_bank_number' => '163464526832',
+				'bank_name' 			=> 'Maybank',
+				'description' 		=> 'I met a girl named Lisha on Facebook. We talked for about 2 weeks. Then she said "I want to see you but have not enough money" She wanted money with Western Union. But I said her that I can give it from bank account then she gave me the account.',
 			)
 		);
 

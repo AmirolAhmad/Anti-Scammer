@@ -61,7 +61,7 @@ class AuthController extends Controller {
 
 		if ($validator->fails()) {
 
-			return Redirect::route('register')->withErrors($validator);
+			return Redirect::route('register')->withErrors($validator)->withInput();
 		} else {
 
 			$email 			= Input::get('email');
@@ -88,7 +88,7 @@ class AuthController extends Controller {
 
 				), function($message) use ($user) {
 
-					$message->to($user->email, $user->fullname)->subject('Activate you account');
+					$message->to($user->email, $user->fullname)->subject('Activate your account');
 
 				});
 

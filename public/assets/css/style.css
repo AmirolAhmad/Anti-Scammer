@@ -36,6 +36,12 @@ body {
   margin: 0 auto;
 }
 
+.container-report {
+  padding: 0 10px;
+  width: 800px;
+  margin: 0 auto;
+}
+
 .ui.menu:not(.vertical) .item > .input {
   vertical-align: middle;
   width: 320px;

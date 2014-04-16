@@ -21,7 +21,7 @@
 	    <label>Email Address</label>
 	    <div class="ui left labeled icon input">
 	      <input type="text" placeholder="Email address" name="email"{{ (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : '' }}>
-	      <i class="user icon"></i>
+	      <i class="mail icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
@@ -32,7 +32,7 @@
 	    <p>{{ $error }}</p>
 	  </div>
 	  @endforeach
-	  <input type="submit" class="ui blue submit button" value="Reset my account">
+	  <button type="submit" class="ui small teal submit button"><i class="mail icon"></i> Reset my account</button>
 	</div>
 	{{ Form::close() }}
 

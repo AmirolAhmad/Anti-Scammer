@@ -32,6 +32,9 @@ Route::group(array('before' => 'guest'), function() {
 	Route::get('/forgot', array('as' => 'forgot', 'uses' => 'AuthController@getForgotPassword'));
 	Route::get('/account/reset/{code}', array('as' => 'account-reset', 'uses' => 'AuthController@getReset'));
 
+	/* View Specific Report (GET) */
+	Route::get('/report/{reportid}', array('as' => 'view-report', 'uses' => 'HomeController@getViewReport'));
+
 });
 
 /* Authenticated group */

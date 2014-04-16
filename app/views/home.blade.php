@@ -39,7 +39,9 @@
       @foreach ($reports as $report)
       <tr>
         <td>{{ $report->reporter }}</td>
-        <td>{{ $report->scammer_name }}</td>
+        <td>
+          <img class="ui avatar image" src="{{ URL::to($report->profile_picture); }}"> {{ $report->scammer_name }}
+        </td>
         <td>{{ $report->subject }}</td>
         <td>{{ $report->location }}, {{ $report->country }}</td>
         <td>

@@ -17,11 +17,16 @@
 	  <div class="field">
 	    <label>Full Name</label>
 	    <div class="ui left labeled icon input">
-	      <input placeholder="Full Name" type="text" name="fullname">
+	      <input placeholder="Full Name" type="text" name="fullname"{{ (Input::old('fullname')) ? ' value="' . e(Input::old('fullname')) . '"' : '' }}>
 	      <i class="user icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  @foreach ($errors->get('fullname') as $error)
+			  <div class="ui red pointing above ui label">
+			    {{ $error }}
+			  </div>
+			  @endforeach
 	    </div>
 	  </div>
 	  <div class="field">
@@ -32,16 +37,26 @@
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  @foreach ($errors->get('email') as $error)
+			  <div class="ui red pointing above ui label">
+			    {{ $error }}
+			  </div>
+			  @endforeach
 	    </div>
 	  </div>
 	  <div class="field">
 	    <label>Username</label>
 	    <div class="ui left labeled icon input">
-	      <input placeholder="Username" type="text" name="name">
+	      <input placeholder="Username" type="text" name="name"{{ (Input::old('name')) ? ' value="' . e(Input::old('name')) . '"' : '' }}>
 	      <i class="user icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  @foreach ($errors->get('name') as $error)
+			  <div class="ui red pointing above ui label">
+			    {{ $error }}
+			  </div>
+			  @endforeach
 	    </div>
 	  </div>
 	  <div class="field">
@@ -52,6 +67,11 @@
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  @foreach ($errors->get('password') as $error)
+			  <div class="ui red pointing above ui label">
+			    {{ $error }}
+			  </div>
+			  @endforeach
 	    </div>
 	  </div>
 	  <div class="field">
@@ -62,6 +82,11 @@
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  @foreach ($errors->get('password_confirmation') as $error)
+			  <div class="ui red pointing above ui label">
+			    {{ $error }}
+			  </div>
+			  @endforeach
 	    </div>
 	  </div>
 	  <div class="inline field">
@@ -69,12 +94,12 @@
 	      <input name="terms" type="checkbox">
 	      <label>I agree to the Terms and Conditions</label>
 	    </div>
+		  @foreach ($errors->get('terms') as $error)
+		  <div class="ui red pointing above ui label">
+		    {{ $error }}
+		  </div>
+		  @endforeach
 	  </div>
-	  @foreach ($errors->all() as $error)
-	  <div class="ui error message">
-	    <p>{{ $error }}</p>
-	  </div>
-	  @endforeach
 	  <button type="submit" class="ui small teal submit button"><i class="add sign icon"></i>Create my account</button>
 	</div>
 	{{ Form::close() }}

@@ -16,11 +16,16 @@
 	  <div class="field">
 	    <label>Full Name</label>
 	    <div class="ui left labeled icon input">
-	      <input placeholder="Full Name" type="text" name="fullname">
+	      <input placeholder="Full Name" type="text" name="fullname"<?php echo (Input::old('fullname')) ? ' value="' . e(Input::old('fullname')) . '"' : ''; ?>>
 	      <i class="user icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  <?php foreach ($errors->get('fullname') as $error): ?>
+			  <div class="ui red pointing above ui label">
+			    <?php echo $error; ?>
+			  </div>
+			  <?php endforeach; ?>
 	    </div>
 	  </div>
 	  <div class="field">
@@ -31,16 +36,26 @@
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  <?php foreach ($errors->get('email') as $error): ?>
+			  <div class="ui red pointing above ui label">
+			    <?php echo $error; ?>
+			  </div>
+			  <?php endforeach; ?>
 	    </div>
 	  </div>
 	  <div class="field">
 	    <label>Username</label>
 	    <div class="ui left labeled icon input">
-	      <input placeholder="Username" type="text" name="name">
+	      <input placeholder="Username" type="text" name="name"<?php echo (Input::old('name')) ? ' value="' . e(Input::old('name')) . '"' : ''; ?>>
 	      <i class="user icon"></i>
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  <?php foreach ($errors->get('name') as $error): ?>
+			  <div class="ui red pointing above ui label">
+			    <?php echo $error; ?>
+			  </div>
+			  <?php endforeach; ?>
 	    </div>
 	  </div>
 	  <div class="field">
@@ -51,6 +66,11 @@
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  <?php foreach ($errors->get('password') as $error): ?>
+			  <div class="ui red pointing above ui label">
+			    <?php echo $error; ?>
+			  </div>
+			  <?php endforeach; ?>
 	    </div>
 	  </div>
 	  <div class="field">
@@ -61,6 +81,11 @@
 	      <div class="ui corner label">
 	        <i class="icon asterisk"></i>
 	      </div>
+			  <?php foreach ($errors->get('password_confirmation') as $error): ?>
+			  <div class="ui red pointing above ui label">
+			    <?php echo $error; ?>
+			  </div>
+			  <?php endforeach; ?>
 	    </div>
 	  </div>
 	  <div class="inline field">
@@ -68,12 +93,12 @@
 	      <input name="terms" type="checkbox">
 	      <label>I agree to the Terms and Conditions</label>
 	    </div>
+		  <?php foreach ($errors->get('terms') as $error): ?>
+		  <div class="ui red pointing above ui label">
+		    <?php echo $error; ?>
+		  </div>
+		  <?php endforeach; ?>
 	  </div>
-	  <?php foreach ($errors->all() as $error): ?>
-	  <div class="ui error message">
-	    <p><?php echo $error; ?></p>
-	  </div>
-	  <?php endforeach; ?>
 	  <button type="submit" class="ui small teal submit button"><i class="add sign icon"></i>Create my account</button>
 	</div>
 	<?php echo Form::close(); ?>

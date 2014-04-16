@@ -23,30 +23,66 @@ class HomeController extends BaseController {
 
 	public function postReport() {
 		$rules = array(
-			'subject' 			=> 'required|min:3|max:255',
-			'scammer_name' 		=> 'required|min:3|max:255',
-			'location' 			=> 'required',
-			'country' 			=> 'required',
-			'contact_number' 	=> 'required|numeric',
-			'acc_bank_number'	=> 'numeric'
+			'scammer_name' 			=> 'required|min:3|max:150',
+			'nickname' 					=> 'min:3|max:50',
+			'scammer_email' 		=> 'email|max:50',
+			'age' 							=> 'numeric',
+			'dob' 							=> 'date_format:"d/m/Y"',
+			'nationality' 			=> 'required',
+			'ic_number' 				=> 'min:3|max:80',
+			'profile_picture' 	=> 'image',
+			'attachment' 				=> 'mimes:jpeg,png,pdf',
+			'subject' 					=> 'required|min:3|max:255',
+			'location' 					=> 'required|min:3|max:100',
+			'country' 					=> 'required',
+			'contact_number' 		=> 'required|numeric',
+			'acc_bank_number'		=> 'numeric|min:3',
+			'bank_name' 				=> 'min:3|max:50',
+			'description'				=> 'required|min:3|max:255'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()) {
-			return Redirect::route('report')->withErrors($validator);
+			return Redirect::route('report')->withErrors($validator)->withInput();
+		}
+
+		if (Input::hasFile('profile_picture')) {
+			// Upload profile picture and save to upload folder
+			$file 										= Input::file('profile_picture');
+			$destinationPath 					= public_path() . '/uploads/';
+			$filename 								= str_random(12) . '_' . $file->getClientOriginalName();
+			$profile_picture 					= $file->move($destinationPath, $filename);
+		}
+
+		if (Input::hasFile('attachment')) {
+			// Upload attachment and save to upload folder
+			$fileAttach 							= Input::file('attachment');
+			$destinationPathAttach 		= public_path() . '/uploads/';
+			$filenameAttach 					= str_random(12) . '_' . $fileAttach->getClientOriginalName();
+			$attachment 							= $fileAttach->move($destinationPathAttach, $filenameAttach);
 		}
 
 		$report = new Report;
-		$report->subject 			= Input::get('subject');
 		$report->scammer_name 		= Input::get('scammer_name');
-		$report->location 			= Input::get('location');
-		$report->country 			= Input::get('country');
+		$report->nickname 				= Input::get('nickname');
+		$report->scammer_email 		= Input::get('scammer_email');
+		$report->age 							= Input::get('age');
+		$report->dob 							= Input::get('dob');
+		$report->nationality 			= Input::get('nationality');
+		$report->ic_number 				= Input::get('ic_number');
+		$report->profile_picture 	= '/uploads/' . $filename;
+		$report->attachment 			= '/uploads/' . $filenameAttach;
+		$report->subject 					= Input::get('subject');
+		$report->location 				= Input::get('location');
+		$report->country 					= Input::get('country');
 		$report->contact_number 	= Input::get('contact_number');
 		$report->acc_bank_number 	= Input::get('acc_bank_number');
-		$report->bank_name 			= Input::get('bank_name');
-		$report->owner_id			= Auth::user()->id;
-		$report->reporter			= Auth::user()->fullname;
+		$report->bank_name 				= Input::get('bank_name');
+		$report->description 			= Input::get('description');
+		$report->owner_id					= Auth::user()->id;
+		$report->reporter					= Auth::user()->fullname;
+
 		$report->save();
 
 		return Redirect::route('home');
@@ -63,19 +99,19 @@ class HomeController extends BaseController {
 
 	public function updateProfile() {
 		$rules = array(
-			'fullname' 					=> 'required|min:3',
+			'fullname' 				=> 'required|min:3',
 			'email' 					=> 'required|email'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
 
 		if ($validator->fails()) {
-			return Redirect::route('edit')->withErrors($validator);
+			return Redirect::route('edit')->withErrors($validator)->withInput();
 		}
 
-		$edit 				= User::find(Auth::user()->id);
+		$edit 						= User::find(Auth::user()->id);
 		$edit->fullname 	= Input::get('fullname');
-		$edit->email 		= Input::get('email');
+		$edit->email 			= Input::get('email');
 		$edit->save();
 
 		return Redirect::route('edit')->with('success', 'Your profile has been update.');
@@ -87,8 +123,8 @@ class HomeController extends BaseController {
 
 	public function updatePassword() {
 		$rules = array(
-			'current_password' 			=> 'required',
-			'password' 					=> 'required|min:8',
+			'current_password' 				=> 'required',
+			'password' 								=> 'required|min:8',
 			'password_confirmation'		=> 'required|same:password'
 		);
 
