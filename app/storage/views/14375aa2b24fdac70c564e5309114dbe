@@ -1,0 +1,71 @@
+
+<?php $__env->startSection('content'); ?>
+
+<?php if($reports): ?>
+
+<div class="container">
+
+  <div class="ui info message">
+	  <i class="close icon"></i>
+	  <div class="header">
+	    Was this what you are searching for?
+	  </div>
+	</div>
+
+  <h2 class="ui header">
+    <i class="table icon"></i>
+    <div class="content">
+      List of scammer
+      <div class="sub header">Here you can view all the details about the scammer from all over the world.</div>
+    </div>
+  </h2>
+
+  <table class="ui table segment">
+    <thead>
+      <tr>
+        <th>Reported By</th>
+        <th>Scammer Name</th>
+        <th>Subject</th>
+        <th>Location</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($reports as $report): ?>
+      <tr>
+        <td><?php echo $report->reporter; ?></td>
+        <td>
+          <img class="ui avatar image" src="<?php echo URL::to($report->profile_picture);; ?>"> <?php echo $report->scammer_name; ?>
+        </td>
+        <td><?php echo $report->subject; ?></td>
+        <td><?php echo $report->location; ?>, <?php echo $report->country; ?></td>
+        <td>
+          <a href="<?php echo url('/view/' . $report->id); ?>" class="icon mini teal ui button" data-content="View more info">
+            <i class="info icon"></i>
+          </a>
+          <div class="icon mini red ui button" data-content="Request to remove">
+            <i class="mail icon"></i>
+          </div>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+ </div>
+  <?php else: ?>
+<div class="container-login">
+
+  <div class="ui error message">
+	  <div class="header">
+	    Ops! Can't find that word for you. But we have this for you!
+	  </div>
+	</div>
+	 
+	 <img class="ui huge image" src="<?php echo URL::to('img/search-error.jpg');; ?>">
+
+</div>
+  <?php endif; ?>
+	
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

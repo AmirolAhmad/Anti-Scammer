@@ -19,7 +19,7 @@
     <center>
       <h2 class="ui header">
         <div class="content">
-          List of scammer
+          Latest List of Scammer
           <div class="sub header">Here you can view all the details about the scammer from all over the world.</div>
         </div>
       </h2>
@@ -65,7 +65,7 @@
     <div class="row">
       <div class="column">
         <h1 class="center aligned ui header">
-          Cat Tips Right In Your Inbox
+          Scam Tips Right In Your Finger
         </h1>
       </div>
     </div>
@@ -74,24 +74,24 @@
       <div class="ui three column center aligned stackable grid">
         <div class="column">
           <div class="ui icon header">
-            <i class="circular book link icon"></i>
-            Courses 
+            <i class="circular users icon"></i>
+            Know Beter 
           </div>
-          <p>Take your kitty to a cat-ducation course and learn how to treat her well.</p>
+          <p>The first step that you should bear in mind is know that person better.</p>
         </div>
         <div class="column">
           <div class="ui icon header">
-            <i class="circular code link icon"></i>
-            Library
+            <i class="circular browser icon"></i>
+            Get Details
           </div>
-          <p>Dig through our cat library to found out amazing things you can do with your kitty.</p>
+          <p>Grab as much as you can the valid information of that person.</p>
         </div>
         <div class="column">
           <div class="ui icon header">
-            <i class="circular user link icon"></i>
-            Community
+            <i class="circular globe icon"></i>
+            Check Online
           </div>
-          <p>Get feedback on your cat from a community of loving pet owners on our online bulletin board system.</p>
+          <p>In this era, you can search that person via internet to get more information.</p>
         </div>
       </div>
     </div>
@@ -103,19 +103,15 @@
   <div class="row">
     <div class="column">
       <h1 class="center aligned ui header">
-        Cat Tips Right In Your Inbox
+        Get The Latest Update of Scam List
       </h1>
     </div>
   </div>
   <div class="row">
     <div class="ten wide column">
-      <h2 class="ui header">How to Win Your Cats Attention</h2>
-      <p>Getting your cat to notice you is a large part of being a pet owner. Although I have a lot of patience for writing things about cats, perhaps this might be enough body copy to make this section of text look filled out.</p>
+      <h2 class="ui header">What do you know about scamming activities?</h2>
+      <p>A fraudulent scheme performed by a dishonest individual, group, or company in an attempt obtain money or something else of value. Scams traditionally resided in confidence tricks, where an individual would misrepresent themselves as someone with skill or authority, i.e. a doctor, lawyer, investor. After the internet became widely used, new forms of scams emerged such as lottery scams, scam baiting, email spoofing, phishing, or request for helps.</p>
       <p>This and other tips can be found in our newsletter, amazing right?</p>
-      <div class="ui basic inverted animated button button">
-        <div class="visible content">Read More</div>
-        <div class="hidden content"><i class="right arrow icon"></i></div>
-      </div>
     </div>
     <div class="six wide column">
       <div class="ui secondary form segment">
@@ -138,7 +134,7 @@
   <div class="row">
     <div class="column">
       <h1 class="center aligned ui header">
-        Many Companies Rely on Our Cat Knowledge
+        Scammer Are Anywhere In This World
       </h1>
       <div class="ui horizontal divider"><i class="heart icon"></i></div>
     </div>

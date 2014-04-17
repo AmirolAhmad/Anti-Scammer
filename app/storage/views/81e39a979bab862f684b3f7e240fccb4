@@ -1,0 +1,52 @@
+
+<?php $__env->startSection('content'); ?>
+
+<div class="container">
+
+  <div class="ui info icon message">
+    <i class="close icon"></i>
+    <i class="inbox icon"></i>
+    <div class="content">
+      <div class="header">
+        Raise your hand and help the world.
+      </div>
+      <p>Statistic showing that every 6 hours per day, 2 people has been scammed from all over the world!</p>
+    </div>
+  </div>
+
+  <table class="ui table segment">
+    <thead>
+      <tr>
+        <th>Reported By</th>
+        <th>Scammer Name</th>
+        <th>Subject</th>
+        <th>Location</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <?php foreach ($reports as $report): ?>
+      <tr>
+        <td><?php echo $report->reporter; ?></td>
+        <td>
+          <img class="ui avatar image" src="<?php echo URL::to($report->profile_picture);; ?>"> <?php echo $report->scammer_name; ?>
+        </td>
+        <td><?php echo $report->subject; ?></td>
+        <td><?php echo $report->location; ?>, <?php echo $report->country; ?></td>
+        <td>
+          <a href="<?php echo url('/view/' . $report->id); ?>" class="icon mini teal ui button" data-content="View more info">
+            <i class="info icon"></i>
+          </a>
+          <div class="icon mini red ui button" data-content="Request to remove">
+            <i class="mail icon"></i>
+          </div>
+        </td>
+      </tr>
+      <?php endforeach; ?>
+    </tbody>
+  </table>
+
+ </div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

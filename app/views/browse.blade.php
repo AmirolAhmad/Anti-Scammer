@@ -2,24 +2,18 @@
 
 @section('content')
 
-@if($reports)
-
 <div class="container">
 
-  <div class="ui info message">
-	  <i class="close icon"></i>
-	  <div class="header">
-	    Was this what you are searching for?
-	  </div>
-	</div>
-
-  <h2 class="ui header">
-    <i class="table icon"></i>
+  <div class="ui info icon message">
+    <i class="close icon"></i>
+    <i class="inbox icon"></i>
     <div class="content">
-      List of scammer
-      <div class="sub header">Here you can view all the details about the scammer from all over the world.</div>
+      <div class="header">
+        Raise your hand and help the world.
+      </div>
+      <p>Statistic showing that every 6 hours per day, 2 people has been scammed from all over the world!</p>
     </div>
-  </h2>
+  </div>
 
   <table class="ui table segment">
     <thead>
@@ -52,20 +46,7 @@
       @endforeach
     </tbody>
   </table>
+
  </div>
-  @else
-<div class="container-login">
-
-  <div class="ui error message">
-	  <div class="header">
-	    Ops! Can't find that word for you. But we have this for you!
-	  </div>
-	</div>
-	 
-	 <img class="ui huge image" src="{{ URL::to('img/search-error.jpg'); }}">
-
-</div>
-  @endif
-	
 
 @stop

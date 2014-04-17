@@ -14,6 +14,15 @@ class HomeController extends BaseController {
 
 	}
 
+	public function getBrowseReport() {
+		// Fetch all the data from report table
+		$reports = DB::table('reports')->get();
+
+		return View::make('browse', array(
+			'reports' => $reports
+		));
+	}
+
 	public function getReport() {
 
 		$country_options = array('' => 'Please Select Your Country') + Country::lists('name', 'name');
@@ -168,7 +177,7 @@ class HomeController extends BaseController {
 
 		$report = DB::table('reports')->where('id', $id)->first();
 
-		if($report && $report->owner_id == Auth::user()->id) {
+		if($report && $report->owner_id) {
 			return View::make('view', array(
 				'report' => $report
 			));
