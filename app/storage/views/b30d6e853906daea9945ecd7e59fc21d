@@ -15,11 +15,16 @@
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
+
 <div class="container">
+
+<?php if(Session::has('global')): ?>
+<div class="ui red message"><?php echo Session::get('global'); ?></div>
+<?php endif; ?>
   <h2 class="ui header">
     <i class="table icon"></i>
     <div class="content">
-      List of scammer
+      List of scammer submitted by you
       <div class="sub header">Here you can view all the details about the scammer from all over the world.</div>
     </div>
   </h2>
@@ -27,7 +32,6 @@
   <table class="ui table segment">
     <thead>
       <tr>
-        <th>Reported By</th>
         <th>Scammer Name</th>
         <th>Subject</th>
         <th>Location</th>
@@ -37,14 +41,18 @@
     <tbody>
       <?php foreach ($reports as $report): ?>
       <tr>
-        <td><?php echo $report->reporter; ?></td>
-        <td><?php echo $report->scammer_name; ?></td>
+        <td>
+          <img class="ui avatar image" src="<?php echo URL::to($report->profile_picture);; ?>"> <?php echo $report->scammer_name; ?>
+        </td>
         <td><?php echo $report->subject; ?></td>
         <td><?php echo $report->location; ?>, <?php echo $report->country; ?></td>
         <td>
-          <div class="icon mini teal ui button" data-content="View more info">
+          <a href="<?php echo url('/view/' . $report->id); ?>" class="icon mini teal ui button" data-content="View more info">
             <i class="info icon"></i>
-          </div>
+          </a>
+          <a href="<?php echo url('/edit-report/' . $report->id); ?>" class="icon mini purple ui button" data-content="Click to edit">
+            <i class="edit icon"></i>
+          </a>
           <div class="icon mini red ui button" data-content="Click to copy the URL">
             <i class="external url icon"></i>
           </div>

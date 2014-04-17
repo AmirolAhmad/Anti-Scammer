@@ -2,6 +2,15 @@
 
 Route::get('/', array('as' => 'home', 'uses' => 'HomeController@getIndex'));
 
+/* View List Report (GET) */
+Route::get('/view/{id}', array('as' => 'view', 'uses' => 'HomeController@getViewReport'));
+
+/* Error Page 404 */
+App::missing(function($exception){ return Response::view('errors.missing', array(), 404); });
+
+/* Search Form */
+Route::post('/search', array('uses' => 'HomeController@getSearch'));
+
 /* Un-authenticated group */
 Route::group(array('before' => 'guest'), function() {
 
@@ -32,9 +41,6 @@ Route::group(array('before' => 'guest'), function() {
 	Route::get('/forgot', array('as' => 'forgot', 'uses' => 'AuthController@getForgotPassword'));
 	Route::get('/account/reset/{code}', array('as' => 'account-reset', 'uses' => 'AuthController@getReset'));
 
-	/* View Specific Report (GET) */
-	Route::get('/view', array('as' => 'view', 'uses' => 'HomeController@getViewReport'));
-
 });
 
 /* Authenticated group */
@@ -52,6 +58,9 @@ Route::group(array('before' => 'auth'), function() {
 		/* Submit a report (POST) */
 		Route::post('/report', array('uses' => 'HomeController@postReport'));
 
+		/* Edit Report (POST) */
+		Route::post('edit-report/{id}', array('uses' => 'HomeController@editViewReport'));
+
 	});
 
 	/* Edit Profile (GET) */
@@ -65,5 +74,11 @@ Route::group(array('before' => 'auth'), function() {
 
 	/* Logout the user (GET) */
 	Route::get('/logout', array('uses' => 'AuthController@logOut'));
+
+	/* List the report (GET) */
+	Route::get('/list', array('as' => 'list', 'uses' => 'HomeController@listView'));
+
+	/* Edit Report (GET) */
+	Route::get('/edit-report/{id}', array('as' => 'edit-report', 'uses' => 'HomeController@showViewReport'));
 
 });

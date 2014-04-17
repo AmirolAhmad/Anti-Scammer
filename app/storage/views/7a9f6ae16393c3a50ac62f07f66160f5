@@ -1,0 +1,41 @@
+
+<?php $__env->startSection('content'); ?>
+
+<div class="container-login">
+
+	<h2 class="ui header">
+	  <i class="settings icon"></i>
+	  <div class="content">
+	    Forgot Password
+	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
+	  </div>
+	</h2>
+
+	<?php echo Form::open(array('autocomplete' => 'off')); ?>
+	<div class="ui error form segment">
+		<?php if(Session::has('global')): ?>
+		<div class="ui red message"><?php echo Session::get('global'); ?></div>
+		<?php endif; ?>
+	  <div class="field">
+	    <label>Email Address</label>
+	    <div class="ui left labeled icon input">
+	      <input type="text" placeholder="Email address" name="email"<?php echo (Input::old('email')) ? ' value="' . e(Input::old('email')) . '"' : ''; ?>>
+	      <i class="mail icon"></i>
+	      <div class="ui corner label">
+	        <i class="icon asterisk"></i>
+	      </div>
+	    </div>
+	  </div>
+	  <?php foreach ($errors->all() as $error): ?>
+	  <div class="ui error message">
+	    <p><?php echo $error; ?></p>
+	  </div>
+	  <?php endforeach; ?>
+	  <button type="submit" class="ui small teal submit button"><i class="mail icon"></i> Reset my account</button>
+	</div>
+	<?php echo Form::close(); ?>
+
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
