@@ -109,6 +109,8 @@ return array(
 		'Thomaswelton\LaravelGravatar\LaravelGravatarServiceProvider',
 		'Intervention\Image\ImageServiceProvider',
 		'Aws\Laravel\AwsServiceProvider',
+		'GrahamCampbell\Security\SecurityServiceProvider',
+		'GrahamCampbell\Binput\BinputServiceProvider'
 
 	),
 
@@ -178,6 +180,8 @@ return array(
 		'Gravatar' 		  	=> 'Thomaswelton\LaravelGravatar\Facades\Gravatar',
 		'Image' 					=> 'Intervention\Image\Facades\Image',
 		'AWS' 						=> 'Aws\Laravel\AwsFacade',
+		'Security' 				=> 'GrahamCampbell\Security\Facades\Security',
+		'Binput' 					=> 'GrahamCampbell\Binput\Facades\Binput',
 
 	),
 

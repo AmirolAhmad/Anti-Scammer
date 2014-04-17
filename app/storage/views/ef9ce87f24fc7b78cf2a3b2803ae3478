@@ -3,10 +3,16 @@
 
 <div class="container-login">
 
+	<?php if(Session::has('global')): ?>
+  <div class="ui blue message"><?php echo Session::get('global'); ?></div>
+  <?php endif; ?>
+
+	<div class="ui red message">You must login in order to file a report</div>
+
 	<h2 class="ui header">
 	  <i class="settings icon"></i>
 	  <div class="content">
-	    Login
+	    Sign in to your account
 	    <div class="sub header">Manage your account settings and set e-mail preferences.</div>
 	  </div>
 	</h2>
@@ -33,12 +39,21 @@
 	      </div>
 	    </div>
 	  </div>
+	  <div class="inline field">
+	    <div class="ui checkbox">
+	      <input type="checkbox" name="remember" id="remember">
+	      <label for="remember">Remember me</label>
+	    </div>
+	  </div>
 	  <?php foreach ($errors->all() as $error): ?>
 	  <div class="ui error message">
 	    <p><?php echo $error; ?></p>
 	  </div>
 	  <?php endforeach; ?>
-	  <input type="submit" class="ui blue submit button" value="Login">
+	  <div class="inline field">
+	  	<button type="submit" class="ui small teal submit button"><i class="sign in icon"></i> Login</button>
+	  	<a href="<?php echo url('/forgot'); ?>" class="ui basic mini button">Forgot password? Click here</a>
+	  </div>
 	</div>
 	<?php echo Form::close(); ?>
 

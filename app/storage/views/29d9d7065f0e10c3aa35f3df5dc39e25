@@ -23,6 +23,9 @@ $current_page = end((explode('/', $current_url)));
 $home = '';
 $login = '';
 $register = '';
+$report = '';
+$list = '';
+$help = '';
 switch($current_page){
     case 'login':
         $login = 'active';
@@ -30,13 +33,22 @@ switch($current_page){
     case 'register':
         $register = 'active';
         break;
+    case 'report':
+        $report = 'active';
+        break;
+    case 'list':
+        $list = 'active';
+        break;
+    case 'help':
+        $help = 'active';
+        break;
     default:
         $home = 'active';
         break;
 }
 ?>
   <!-- Top Menu -->
-  <div class="ui teal inverted small menu no-border">
+  <div class="ui red inverted small menu no-border">
     <a href="<?php echo url('/'); ?>" class="<?php echo $home; ?> item">
       <i class="home icon"></i> Home
     </a>
@@ -47,47 +59,97 @@ switch($current_page){
       <i class="mail icon"></i> Messages
     </a>
 
-    <?php if (Session::has('user')) { ?>
-    <div class="item">
-      <a class="red ui icon button" data-content="File a report" href="<?php echo URL::route('report'); ?>">
-        <i class="edit icon"></i>
-      </a>
+    <?php if(Auth::check()): ?>
+    <div class="ui dropdown item">
+      Report <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="<?php echo $report; ?> item" href="<?php echo URL::route('report'); ?>">
+          <i class="edit icon"></i> Submit a report
+        </a>
+        <a class="<?php echo $list; ?> item" href="<?php echo URL::route('list'); ?>">
+          <i class="browser icon"></i> List my report
+        </a>
+      </div>
     </div>
-    <?php } else { ?>
-    <div class="item">
-      <a class="red ui icon button" data-content="File a report" href="<?php echo URL::route('login'); ?>">
-        <i class="edit icon"></i>
-      </a>
-    </div>
-    <?php } ?>
+    <?php else: ?>
+    <a class="<?php echo $report; ?> item" href="<?php echo URL::route('login'); ?>">
+      <i class="edit icon"></i> Submit a report
+    </a>
+    <?php endif; ?>
 
     <div class="right menu">
-      <?php if (!Session::has('user')) { ?>
+    <div class="item">
+      <div class="ui icon small input">
+        <?php echo Form::open(array('url' => 'search')); ?>
+        <input placeholder="Search by name, email, nickname or country" type="text" data-content="Insert your search query here." name="search">
+        <?php echo Form::close(); ?>
+        <i class="search link icon"></i>
+      </div>
+    </div>
+      <?php if(Auth::check()): ?>
+      <div class="ui dropdown item">
+        <img class="ui avatar image" src="<?= Gravatar::src(Auth::user()->email) ?>"> <?php echo Auth::user()->fullname; ?> <i class="icon dropdown"></i>
+        <div class="menu">
+          <a href="<?php echo url('/edit'); ?>" class="item"><i class="edit icon"></i> Edit Profile</a>
+          <a href="<?php echo url('/change-password'); ?>" class="item"><i class="key icon"></i> Change Password</a>
+          <a href="<?php echo url('/logout'); ?>" class="item"><i class="off icon"></i> Logout</a>
+        </div>
+      </div>
+      <?php else: ?>
       <a href="<?php echo url('/register'); ?>" class="<?php echo $register; ?> item">
         <i class="user icon"></i> Register
       </a>
       <a href="<?php echo url('/login'); ?>" class="<?php echo $login; ?> item">
         <i class="key icon"></i> Login
       </a>
-      <?php } ?>
-      
-      <?php if (Session::has('user')) { ?>
-      <div class="ui dropdown item">
-        <img class="ui avatar image" src="<?= Gravatar::src(Auth::user()->email) ?>"> <?php echo Auth::user()->fullname; ?> <i class="icon dropdown"></i>
-        <div class="menu">
-          <a href="<?php echo url('/edit'); ?>" class="item"><i class="edit icon"></i> Edit Profile</a>
-          <a href="<?php echo url('/change-password'); ?>" class="item"><i class="key icon"></i> Change Password</a>
-          <a class="item"><i class="settings icon"></i> Account Settings</a>
-          <a href="<?php echo url('/logout'); ?>" class="item"><i class="off icon"></i> Logout</a>
-        </div>
-      </div>
-      <?php } ?>
+      <?php endif; ?>
+      <a href="<?php echo url('/help'); ?>" class="<?php echo $help; ?> icon ui item" data-content="Need help?">
+        <i class="help icon"></i>
+      </a>
     </div>
   </div>
   
-  <?php echo $__env->yieldContent('message'); ?>
 
   <?php echo $__env->yieldContent('content'); ?>
+
+  <div class="ui inverted teal page grid segment">
+    <div class="ten wide column">
+      <div class="ui three column stackable grid">
+        <div class="column">
+          <div class="ui header">Courses</div>
+          <div class="ui inverted link list">
+            <a class="item">Registration</a>
+            <a class="item">Course Calendar</a>
+            <a class="item">Professors</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui header">Library</div>
+          <div class="ui inverted link list">
+            <a class="item">A-Z</a>
+            <a class="item">Most Popular</a>
+            <a class="item">Recently Changed</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui header">Community</div>
+          <div class="ui inverted link list">
+            <a class="item">BBS</a>
+            <a class="item">Careers</a>
+            <a class="item">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="six wide right floated aligned column">
+      <h3 class="ui header">Contact Us</h3>
+      <addr>
+        237 Catberry Road <br>
+        Milton Keynes, London <br>
+      </addr>
+      <p>(404) 867-5309</p>
+    </div>
+  </div>
   
 </body>
 </html>

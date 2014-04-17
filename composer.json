@@ -7,7 +7,9 @@
 		"laravel/framework": "4.1.*",
 		"thomaswelton/laravel-gravatar": "0.0.x",
 		"intervention/image": "1.*",
-		"aws/aws-sdk-php-laravel": "1.*"
+		"aws/aws-sdk-php-laravel": "1.*",
+		"graham-campbell/security": "1.1.*@dev",
+		"graham-campbell/binput": "1.1.*@dev"
 	},
 	"autoload": {
 		"classmap": [

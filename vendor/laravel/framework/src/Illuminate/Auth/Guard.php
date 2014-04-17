@@ -409,7 +409,7 @@ class Guard {
 		// identifier. We will then decrypt this later to retrieve the users.
 		if ($remember)
 		{
-			$this->refreshRememberToken($user);
+			$this->createRememberTokenIfDoesntExist($user);
 
 			$this->queueRecallerCookie($user);
 		}
@@ -505,7 +505,10 @@ class Guard {
 		// listening for anytime a user signs out of this application manually.
 		$this->clearUserDataFromStorage();
 
-		$this->refreshRememberToken($user);
+		if ( ! is_null($this->user))
+		{
+			$this->refreshRememberToken($user);
+		}
 
 		if (isset($this->events))
 		{
@@ -545,6 +548,20 @@ class Guard {
 		$user->setRememberToken($token = str_random(60));
 
 		$this->provider->updateRememberToken($user, $token);
+	}
+
+	/**
+	 * Create a new remember token for the user if one doens't already exist.
+	 *
+	 * @param  \Illuminate\Auth\UserInterface  $user
+	 * @return void
+	 */
+	protected function createRememberTokenIfDoesntExist(UserInterface $user)
+	{
+		if (is_null($user->getRememberToken()))
+		{
+			$this->refreshRememberToken($user);
+		}
 	}
 
 	/**

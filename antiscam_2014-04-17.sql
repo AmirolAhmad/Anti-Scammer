@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.34)
 # Database: antiscam
-# Generation Time: 2014-04-16 16:17:28 +0000
+# Generation Time: 2014-04-17 09:57:44 +0000
 # ************************************************************
 
 
@@ -361,8 +361,8 @@ LOCK TABLES `reports` WRITE;
 
 INSERT INTO `reports` (`id`, `owner_id`, `reporter`, `scammer_name`, `nickname`, `scammer_email`, `age`, `dob`, `nationality`, `ic_number`, `profile_picture`, `attachment`, `subject`, `location`, `country`, `contact_number`, `acc_bank_number`, `bank_name`, `description`, `created_at`, `updated_at`)
 VALUES
-	(1,1,'Amirol Ahmad','Evalisa Andria','Lisha','lisa-cute@testmail.com','32','20/03/1982','Indonesia','A5785657','','','Mencuri hati aku','P. Pinang','Malaysia','60107152123',2147483647,'Maybank','I met a girl named Lisha on Facebook. We talked for about 2 weeks. Then she said \"I want to see you but have not enough money\" She wanted money with Western Union. But I said her that I can give it from bank account then she gave me the account.','0000-00-00 00:00:00','0000-00-00 00:00:00'),
-	(2,1,'Amirol Ahmad','John Doe','John','john-scammer@testmail.com','31','17/04/1983','United State','A5785657','/uploads/LT12xPvRl5yz_amirol.jpg','/uploads/LbvCajS57kVd_INV-000001.pdf','Fake social account and just want your money','London','Nigeria','+60195151706',2147483647,'Hong Leong Bank','I met him last year','2014-04-16 16:15:32','2014-04-16 16:15:32');
+	(1,1,'Amirol Ahmad','Evalisa Andria','Lisha','lisa-cute@testmail.com','32','20/03/1982','Indonesia','A5785657','/uploads/aZb4d4IZs4C1_1360397951279.jpg','','Mencuri hati aku','P. Pinang','Malaysia','60107152123',2147483647,'Maybank','I met a girl named Lisha on Facebook. We talked for about 2 weeks. Then she said \"I want to see you but have not enough money\" She wanted money with Western Union. But I said her that I can give it from bank account then she gave me the account.','0000-00-00 00:00:00','2014-04-17 09:07:49'),
+	(3,2,'Evalisa Andria','Kumar Dev Shrestha','Kumar','kdevshr9@gmail.com','28','10/10/1986','Nepali','NP264746623','/uploads/xtSw5MHdOVpW_Photo Nov 01, 11 37 05 PM.jpg','/uploads/Xi9Zey6XoraB_1360397501117.jpg','He is so good','Selangor','Malaysia','+60103645377',1046385668,'CIMB','I buy the item and got it without having any problem','2014-04-17 03:43:07','2014-04-17 07:47:44');
 
 /*!40000 ALTER TABLE `reports` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -385,7 +385,7 @@ LOCK TABLES `sessions` WRITE;
 
 INSERT INTO `sessions` (`id`, `payload`, `last_activity`)
 VALUES
-	('4fc345eb4dab91af7d0db38b87d144a2eedd7758','YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRHgzUjhzYktjMTc2VXFROFI1VGowVkdjYVh3amNzUFFDcWdLd3JiYiI7czozOiJ1cmwiO2E6MDp7fXM6NToiZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozODoibG9naW5fODJlNWQyYzU2YmRkMDgxMTMxOGYwY2YwNzhiNzhiZmMiO3M6MToiMSI7czo5OiJfc2YyX21ldGEiO2E6Mzp7czoxOiJ1IjtpOjEzOTc2NjUwMDQ7czoxOiJjIjtpOjEzOTc2NjQ3OTQ7czoxOiJsIjtzOjE6IjAiO319',1397665004);
+	('50d79a14fc9715aa8ee4ccb7ee7cada55116a3cc','YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSHFzYnJmNGt1TXJPd1dBWUhJSjQ3REJIS0dhTHdKdkRvb3RwYnZhbiI7czo1OiJmbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czozODoibG9naW5fODJlNWQyYzU2YmRkMDgxMTMxOGYwY2YwNzhiNzhiZmMiO3M6MToiMSI7czo5OiJfc2YyX21ldGEiO2E6Mzp7czoxOiJ1IjtpOjEzOTc3Mjg0MzY7czoxOiJjIjtpOjEzOTc2OTcyODE7czoxOiJsIjtzOjE6IjAiO319',1397728436);
 
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -416,7 +416,8 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `name`, `fullname`, `password`, `password_temp`, `email`, `code`, `active`, `remember_token`, `created_at`, `updated_at`)
 VALUES
-	(1,'AmirolAhmad','Amirol Ahmad','$2y$10$ji38SbLsM4F9nO29U3GcD.5WFTn2WtXqNahVaMmHhQkXKkQ0imhwW','','test@testmail.com','',1,'7UapAUByc8pEhMwBSQPIgE7iAAqKwQ1N5cxDwj4OWXnFDxoEIpnC9Vcc1BJJ','0000-00-00 00:00:00','2014-04-16 16:16:31');
+	(1,'AmirolAhmad','Amirol Ahmad','$2y$10$ji38SbLsM4F9nO29U3GcD.5WFTn2WtXqNahVaMmHhQkXKkQ0imhwW','','test@testmail.com','',1,'750KtaUKIXhSy337hLjlxc6m0WumhGf0AR4mPb0OJpF1jWBKUqxtFvSLg7rw','0000-00-00 00:00:00','2014-04-17 08:40:44'),
+	(2,'lisha','Evalisa Andria','$2y$10$5fNWUa2Vd5GJMrbxXPV65uTRj74LWHXeIF7V4saPei9mfLRwpr0U6','','lisa.andria11@gmail.com','',1,'4T4UyzdN5qKt0ERDSKOiQwYZKA5VUwb7YZLDdDlivNsrTtDmChBf5XJv3tZd','2014-04-17 02:45:23','2014-04-17 07:48:23');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

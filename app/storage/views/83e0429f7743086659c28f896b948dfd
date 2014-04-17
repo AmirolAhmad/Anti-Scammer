@@ -1,0 +1,7 @@
+Hello <?php echo $fullname; ?>,<br /><br />
+
+Please activate your account by clicking on the link below:- <br /><br />
+
+---<br />
+<?php echo $link; ?><br />
+---

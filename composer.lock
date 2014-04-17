@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "30ee6a07df458ffc906338988c0f17d4",
+    "hash": "5c0aa842b5152252bbe1889b4b1575f5",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -259,6 +259,125 @@
             "time": "2013-12-04 14:19:30"
         },
         {
+            "name": "graham-campbell/binput",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
+                "reference": "388b3a6f31014bf2c8be62ff16d8e05817b8fd1d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/388b3a6f31014bf2c8be62ff16d8e05817b8fd1d",
+                "reference": "388b3a6f31014bf2c8be62ff16d8e05817b8fd1d",
+                "shasum": ""
+            },
+            "require": {
+                "graham-campbell/security": "1.1.*",
+                "laravel/framework": "4.1.*",
+                "php": ">=5.4.7",
+                "symfony/config": "2.4.*",
+                "symfony/event-dispatcher": "2.4.*",
+                "symfony/filesystem": "2.4.*"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "0.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Binput\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Binput Is An Input Protector For Laravel 4.1",
+            "keywords": [
+                "Binput",
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Binput",
+                "Laravel-Binput",
+                "better",
+                "better input",
+                "framework",
+                "input",
+                "laravel"
+            ],
+            "time": "2014-04-14 21:22:53"
+        },
+        {
+            "name": "graham-campbell/security",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
+                "reference": "e99c357cd407c15490231a7ed1f8e123de70c345"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/e99c357cd407c15490231a7ed1f8e123de70c345",
+                "reference": "e99c357cd407c15490231a7ed1f8e123de70c345",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "4.1.*",
+                "php": ">=5.4.7",
+                "symfony/config": "2.4.*",
+                "symfony/event-dispatcher": "2.4.*",
+                "symfony/filesystem": "2.4.*"
+            },
+            "require-dev": {
+                "graham-campbell/testbench": "0.3.*"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\Security\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@mineuk.com"
+                }
+            ],
+            "description": "Security Is A Port Of The Security Class From Codeigniter 2.1 For Laravel 4.1",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Laravel Security",
+                "Laravel-Security",
+                "codeigniter",
+                "framework",
+                "laravel",
+                "security"
+            ],
+            "time": "2014-04-14 16:52:17"
+        },
+        {
             "name": "guzzle/guzzle",
             "version": "v3.8.1",
             "source": {
@@ -492,16 +611,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v4.1.26",
+            "version": "v4.1.27",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "0888ff0d2b32c51f712187c9382da0a8af2aa2fd"
+                "reference": "2f1c6cd51dfd51d573977f07e34ba609cc0bf3ac"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/0888ff0d2b32c51f712187c9382da0a8af2aa2fd",
-                "reference": "0888ff0d2b32c51f712187c9382da0a8af2aa2fd",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/2f1c6cd51dfd51d573977f07e34ba609cc0bf3ac",
+                "reference": "2f1c6cd51dfd51d573977f07e34ba609cc0bf3ac",
                 "shasum": ""
             },
             "require": {
@@ -577,9 +696,7 @@
             },
             "autoload": {
                 "classmap": [
-                    [
-                        "src/Illuminate/Queue/IlluminateQueueClosure.php"
-                    ]
+                    "src/Illuminate/Queue/IlluminateQueueClosure.php"
                 ],
                 "files": [
                     "src/Illuminate/Support/helpers.php"
@@ -605,7 +722,7 @@
                 "framework",
                 "laravel"
             ],
-            "time": "2014-04-15 16:05:47"
+            "time": "2014-04-16 15:27:05"
         },
         {
             "name": "monolog/monolog",
@@ -1153,6 +1270,56 @@
             "description": "Symfony BrowserKit Component",
             "homepage": "http://symfony.com",
             "time": "2014-03-27 14:53:17"
+        },
+        {
+            "name": "symfony/config",
+            "version": "v2.4.3",
+            "target-dir": "Symfony/Component/Config",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/Config.git",
+                "reference": "e98693981385224bd31667e56204f311d9e0f98e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/Config/zipball/e98693981385224bd31667e56204f311d9e0f98e",
+                "reference": "e98693981385224bd31667e56204f311d9e0f98e",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3",
+                "symfony/filesystem": "~2.3"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.4-dev"
+                }
+            },
+            "autoload": {
+                "psr-0": {
+                    "Symfony\\Component\\Config\\": ""
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Fabien Potencier",
+                    "email": "fabien@symfony.com",
+                    "homepage": "http://fabien.potencier.org",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "http://symfony.com/contributors"
+                }
+            ],
+            "description": "Symfony Config Component",
+            "homepage": "http://symfony.com",
+            "time": "2014-03-26 11:35:33"
         },
         {
             "name": "symfony/console",
@@ -1939,9 +2106,10 @@
 
     ],
     "minimum-stability": "stable",
-    "stability-flags": [
-
-    ],
+    "stability-flags": {
+        "graham-campbell/security": 20,
+        "graham-campbell/binput": 20
+    },
     "platform": [
 
     ],
