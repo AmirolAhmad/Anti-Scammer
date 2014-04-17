@@ -11,6 +11,7 @@ class HomeController extends BaseController {
 		return View::make('home', array(
 			'reports' => $reports
 		));
+
 	}
 
 	public function getReport() {
@@ -167,9 +168,16 @@ class HomeController extends BaseController {
 
 		$report = DB::table('reports')->where('id', $id)->first();
 
-		return View::make('view', array(
-			'report' => $report
-		));
+		if($report && $report->owner_id == Auth::user()->id) {
+			return View::make('view', array(
+				'report' => $report
+			));
+		} elseif(!$report) {
+			return Redirect::route('list')->with('global', 'Sorry. Couldn\'t find that report.');
+		}
+		else {
+			return Redirect::route('list')->with('global', 'You have no authorized to view that report.');
+		}
 
 	}
 

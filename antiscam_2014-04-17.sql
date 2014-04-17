@@ -7,7 +7,7 @@
 #
 # Host: 127.0.0.1 (MySQL 5.5.34)
 # Database: antiscam
-# Generation Time: 2014-04-17 09:57:44 +0000
+# Generation Time: 2014-04-17 12:35:47 +0000
 # ************************************************************
 
 
@@ -361,8 +361,9 @@ LOCK TABLES `reports` WRITE;
 
 INSERT INTO `reports` (`id`, `owner_id`, `reporter`, `scammer_name`, `nickname`, `scammer_email`, `age`, `dob`, `nationality`, `ic_number`, `profile_picture`, `attachment`, `subject`, `location`, `country`, `contact_number`, `acc_bank_number`, `bank_name`, `description`, `created_at`, `updated_at`)
 VALUES
-	(1,1,'Amirol Ahmad','Evalisa Andria','Lisha','lisa-cute@testmail.com','32','20/03/1982','Indonesia','A5785657','/uploads/aZb4d4IZs4C1_1360397951279.jpg','','Mencuri hati aku','P. Pinang','Malaysia','60107152123',2147483647,'Maybank','I met a girl named Lisha on Facebook. We talked for about 2 weeks. Then she said \"I want to see you but have not enough money\" She wanted money with Western Union. But I said her that I can give it from bank account then she gave me the account.','0000-00-00 00:00:00','2014-04-17 09:07:49'),
-	(3,2,'Evalisa Andria','Kumar Dev Shrestha','Kumar','kdevshr9@gmail.com','28','10/10/1986','Nepali','NP264746623','/uploads/xtSw5MHdOVpW_Photo Nov 01, 11 37 05 PM.jpg','/uploads/Xi9Zey6XoraB_1360397501117.jpg','He is so good','Selangor','Malaysia','+60103645377',1046385668,'CIMB','I buy the item and got it without having any problem','2014-04-17 03:43:07','2014-04-17 07:47:44');
+	(1,1,'Amirol Ahmad','Evalisa Andria','Lisha','lisa-cute@testmail.com','32','20/03/1982','Indonesia','A5785657','','','Mencuri hati aku','P. Pinang','Malaysia','60107152123',2147483647,'Maybank','I met a girl named Lisha on Facebook. We talked for about 2 weeks. Then she said \"I want to see you but have not enough money\" She wanted money with Western Union. But I said her that I can give it from bank account then she gave me the account.','0000-00-00 00:00:00','0000-00-00 00:00:00'),
+	(2,1,'Amirol Ahmad','John Doe','John','john-scammer@testmail.com','31','17/04/1983','United State','A5785657','/uploads/LT12xPvRl5yz_amirol.jpg','/uploads/LbvCajS57kVd_INV-000001.pdf','Fake social account and just want your money','London','Nigeria','+60195151706',2147483647,'Hong Leong Bank','I met him last year','2014-04-16 16:15:32','2014-04-16 16:15:32'),
+	(3,2,'Evalisa Andria','Fareeda Wahab','Eda','F.Eda@testmail.com','26','25/07/1988','Malaysia','880725011124','/uploads/c4ayiw8HjqcG_Personnages-celebres-Troll-face-Troll-face-fuuuu-28382.png','','Beli Tudung Tapi Tak Pernah Dapat','Penang','Malaysia','+60123567890',2147483647,'Maybank','Tanggal 17 hb april 2013 saya beli tudung, tapi sampai sekarang tudung tak sampai lagi, berkali-kali sy telpon tak pernah angkat, dah setahun barang tak wujud lagi. ','2014-04-17 11:18:34','2014-04-17 11:18:34');
 
 /*!40000 ALTER TABLE `reports` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -385,7 +386,8 @@ LOCK TABLES `sessions` WRITE;
 
 INSERT INTO `sessions` (`id`, `payload`, `last_activity`)
 VALUES
-	('50d79a14fc9715aa8ee4ccb7ee7cada55116a3cc','YTo1OntzOjY6Il90b2tlbiI7czo0MDoiSHFzYnJmNGt1TXJPd1dBWUhJSjQ3REJIS0dhTHdKdkRvb3RwYnZhbiI7czo1OiJmbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM6InVybCI7YTowOnt9czozODoibG9naW5fODJlNWQyYzU2YmRkMDgxMTMxOGYwY2YwNzhiNzhiZmMiO3M6MToiMSI7czo5OiJfc2YyX21ldGEiO2E6Mzp7czoxOiJ1IjtpOjEzOTc3Mjg0MzY7czoxOiJjIjtpOjEzOTc2OTcyODE7czoxOiJsIjtzOjE6IjAiO319',1397728436);
+	('4fc345eb4dab91af7d0db38b87d144a2eedd7758','YTo1OntzOjY6Il90b2tlbiI7czo0MDoiRHgzUjhzYktjMTc2VXFROFI1VGowVkdjYVh3amNzUFFDcWdLd3JiYiI7czozOiJ1cmwiO2E6MDp7fXM6NToiZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czozODoibG9naW5fODJlNWQyYzU2YmRkMDgxMTMxOGYwY2YwNzhiNzhiZmMiO3M6MToiMSI7czo5OiJfc2YyX21ldGEiO2E6Mzp7czoxOiJ1IjtpOjEzOTc2NjU1MzY7czoxOiJjIjtpOjEzOTc2NjQ3OTQ7czoxOiJsIjtzOjE6IjAiO319',1397665536),
+	('c906891ed19b57440fdb00be01b7304179e67aa0','YTo0OntzOjY6Il90b2tlbiI7czo0MDoicTd3M0ZPODUwQTRIUG56UWdteXoxTDliNUNrU3dRWDA4aXN0R2laaSI7czo1OiJmbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjM4OiJsb2dpbl84MmU1ZDJjNTZiZGQwODExMzE4ZjBjZjA3OGI3OGJmYyI7czoxOiIyIjtzOjk6Il9zZjJfbWV0YSI7YTozOntzOjE6InUiO2k6MTM5NzczMzU0OTtzOjE6ImMiO2k6MTM5NzczMjcwMjtzOjE6ImwiO3M6MToiMCI7fX0=',1397733549);
 
 /*!40000 ALTER TABLE `sessions` ENABLE KEYS */;
 UNLOCK TABLES;
@@ -416,8 +418,8 @@ LOCK TABLES `users` WRITE;
 
 INSERT INTO `users` (`id`, `name`, `fullname`, `password`, `password_temp`, `email`, `code`, `active`, `remember_token`, `created_at`, `updated_at`)
 VALUES
-	(1,'AmirolAhmad','Amirol Ahmad','$2y$10$ji38SbLsM4F9nO29U3GcD.5WFTn2WtXqNahVaMmHhQkXKkQ0imhwW','','test@testmail.com','',1,'750KtaUKIXhSy337hLjlxc6m0WumhGf0AR4mPb0OJpF1jWBKUqxtFvSLg7rw','0000-00-00 00:00:00','2014-04-17 08:40:44'),
-	(2,'lisha','Evalisa Andria','$2y$10$5fNWUa2Vd5GJMrbxXPV65uTRj74LWHXeIF7V4saPei9mfLRwpr0U6','','lisa.andria11@gmail.com','',1,'4T4UyzdN5qKt0ERDSKOiQwYZKA5VUwb7YZLDdDlivNsrTtDmChBf5XJv3tZd','2014-04-17 02:45:23','2014-04-17 07:48:23');
+	(1,'AmirolAhmad','Amirol Ahmad','$2y$10$ji38SbLsM4F9nO29U3GcD.5WFTn2WtXqNahVaMmHhQkXKkQ0imhwW','','test@testmail.com','',1,'FQCgzH1Cunb9yNO7MOypcWBeZxf8KPz99YQfL8toPc5pkzw6r7nJMQpt7233','0000-00-00 00:00:00','2014-04-17 11:06:54'),
+	(2,'Lisha','Evalisa Andria','$2y$10$PPcIT/jJJmOp1WF3HhuoL.yJUYzTo.Xr2j.yMd11m7jenwA.Fz0nW','','lisa.andria11@gmail.com','',1,'','2014-04-17 11:09:24','2014-04-17 11:10:46');
 
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;

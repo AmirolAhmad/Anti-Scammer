@@ -23,8 +23,9 @@ $current_page = end((explode('/', $current_url)));
 $home = '';
 $login = '';
 $register = '';
-$help = '';
 $report = '';
+$list = '';
+$help = '';
 switch($current_page){
     case 'login':
         $login = 'active';
@@ -34,6 +35,9 @@ switch($current_page){
         break;
     case 'report':
         $report = 'active';
+        break;
+    case 'list':
+        $list = 'active';
         break;
     case 'help':
         $help = 'active';
@@ -56,9 +60,17 @@ switch($current_page){
     </a>
 
     <?php if(Auth::check()): ?>
-    <a class="<?php echo $report; ?> item" href="<?php echo URL::route('report'); ?>">
-      <i class="edit icon"></i> Submit a report
-    </a>
+    <div class="ui dropdown item">
+      Report <i class="dropdown icon"></i>
+      <div class="menu">
+        <a class="<?php echo $report; ?> item" href="<?php echo URL::route('report'); ?>">
+          <i class="edit icon"></i> Submit a report
+        </a>
+        <a class="<?php echo $list; ?> item" href="<?php echo URL::route('list'); ?>">
+          <i class="browser icon"></i> List my report
+        </a>
+      </div>
+    </div>
     <?php else: ?>
     <a class="<?php echo $report; ?> item" href="<?php echo URL::route('login'); ?>">
       <i class="edit icon"></i> Submit a report
@@ -68,7 +80,9 @@ switch($current_page){
     <div class="right menu">
     <div class="item">
       <div class="ui icon small input">
-        <input placeholder="Search..." type="text" data-content="Insert your search query here.">
+        <?php echo Form::open(array('url' => 'search')); ?>
+        <input placeholder="Search by name, email, nickname or country" type="text" data-content="Insert your search query here." name="search">
+        <?php echo Form::close(); ?>
         <i class="search link icon"></i>
       </div>
     </div>
@@ -95,9 +109,47 @@ switch($current_page){
     </div>
   </div>
   
-  <?php echo $__env->yieldContent('message'); ?>
 
   <?php echo $__env->yieldContent('content'); ?>
+
+  <div class="ui inverted teal page grid segment">
+    <div class="ten wide column">
+      <div class="ui three column stackable grid">
+        <div class="column">
+          <div class="ui header">Courses</div>
+          <div class="ui inverted link list">
+            <a class="item">Registration</a>
+            <a class="item">Course Calendar</a>
+            <a class="item">Professors</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui header">Library</div>
+          <div class="ui inverted link list">
+            <a class="item">A-Z</a>
+            <a class="item">Most Popular</a>
+            <a class="item">Recently Changed</a>
+          </div>
+        </div>
+        <div class="column">
+          <div class="ui header">Community</div>
+          <div class="ui inverted link list">
+            <a class="item">BBS</a>
+            <a class="item">Careers</a>
+            <a class="item">Privacy Policy</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="six wide right floated aligned column">
+      <h3 class="ui header">Contact Us</h3>
+      <addr>
+        237 Catberry Road <br>
+        Milton Keynes, London <br>
+      </addr>
+      <p>(404) 867-5309</p>
+    </div>
+  </div>
   
 </body>
 </html>

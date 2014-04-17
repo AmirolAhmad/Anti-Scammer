@@ -1,9 +1,84 @@
 
 <?php $__env->startSection('content'); ?>
 
-<div class="container">
-	<h1><?php echo $report->scammer_name; ?></h1>
-	<h1><?php echo $report->scammer_email; ?></h1>
+<div class="container-login">
+	<div class="ui form segment">
+		<div class="ui top attached label">
+			<center><h2><?php echo $report->scammer_name; ?></h2></center>
+		</div>
+		<div class="field">
+	  	<center>
+	  		<div class="ui">
+		  		<img class="circular ui image content" src="<?php echo $report->profile_picture; ?>" width="200" height="200">
+		  	</div>
+	  	</center>
+	  </div>
+	  <div class="two fields">
+		  <div class="field">
+		    <div class="ui ribbon label">Nickname</div>
+		    <p><?php echo $report->nickname; ?></p>
+		  </div>
+		  <div class="field">
+		    <div class="ui ribbon label">Scammer Email</div>
+		    <p><?php echo $report->scammer_email; ?></p>
+		  </div>
+		</div>
+	  <div class="two fields">
+		  <div class="field">
+		    <div class="ui ribbon label">Age</div>
+		    <p><?php echo $report->age; ?></p>
+		  </div>
+		  <div class="field">
+		    <div class="ui ribbon label">Date of birth</div>
+		    <p><?php echo $report->dob; ?></p>
+		  </div>
+		</div>
+	  <div class="two fields">
+		  <div class="field">
+		    <div class="ui ribbon label">Nationality</div>
+		    <p><?php echo $report->nationality; ?></p>
+		  </div>
+		  <div class="field">
+		    <div class="ui ribbon label">Passport/Identification Card Number</div>
+		    <p><?php echo $report->ic_number; ?></p>
+		  </div>
+		</div>
+		<div class="field">
+		    <div class="ui ribbon label">Contact Number</div>
+		    <p><?php echo $report->contact_number; ?></p>
+		  </div>
+		<div class="ui inverted divider"></div>
+	  <div class="two fields">
+		  <div class="field">
+		    <div class="ui ribbon label">Location</div>
+		    <p><?php echo $report->location; ?></p>
+		  </div>
+		  <div class="field">
+		    <div class="ui ribbon label">Country</div>
+		    <p><?php echo $report->country; ?></p>
+		  </div>
+		</div>
+		<div class="ui inverted divider"></div>
+	  <div class="two fields">
+		  <div class="field">
+		    <div class="ui ribbon label">Account Bank Number</div>
+		    <p><?php echo $report->acc_bank_number; ?></p>
+		  </div>
+		  <div class="field">
+		    <div class="ui ribbon label">Bank Name</div>
+		    <p><?php echo $report->bank_name; ?></p>
+		  </div>
+		</div>
+		<div class="ui inverted divider"></div>
+		  <div class="field">
+		    <div class="ui ribbon label">Subject</div>
+		    <p><?php echo $report->subject; ?></p>
+		  </div>
+		  <div class="field">
+		    <div class="ui ribbon label">Description</div>
+		    <p><?php echo $report->description; ?></p>
+		  </div>
+	</div>
 </div>
 
 <?php $__env->stopSection(); ?>
