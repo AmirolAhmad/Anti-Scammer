@@ -17,6 +17,18 @@
   <script src="<?php echo URL::asset('assets/js/semantic.js'); ?>"></script>
   <script src="<?php echo URL::asset('assets/js/style.js'); ?>"></script>
 
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-50147916-1', 'antiscam.me');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+
+  </script>
+
 </head>
 <body>
 <?php
@@ -116,13 +128,13 @@ switch($current_page){
   <?php echo $__env->yieldContent('content'); ?>
 
   <div class="ui inverted teal page grid segment">
-    <div class="ten wide column">
+    <div class="eight wide column">
       <h3>Osem Network Enterprise</h3>
       <p>No 595 Lorong 94, Taman Ria 08000 Sungai Petani, Kedah MALAYSIA <br>
       Phone: (+603) 7731-0679 | Email: info@antiscam.me</p>
-      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui label">Amirol Ahmad</a></p>
     </div>
-    <div class="six wide right floated aligned column">
+    <div class="eight wide right floated aligned column">
+      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui label">Amirol Ahmad</a></p>
     </div>
   </div>
   

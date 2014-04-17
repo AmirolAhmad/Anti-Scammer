@@ -128,13 +128,13 @@ switch($current_page){
   @yield('content')
 
   <div class="ui inverted teal page grid segment">
-    <div class="ten wide column">
+    <div class="eight wide column">
       <h3>Osem Network Enterprise</h3>
       <p>No 595 Lorong 94, Taman Ria 08000 Sungai Petani, Kedah MALAYSIA <br>
       Phone: (+603) 7731-0679 | Email: info@antiscam.me</p>
-      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui label">Amirol Ahmad</a></p>
     </div>
-    <div class="six wide right floated aligned column">
+    <div class="eight wide right floated aligned column">
+      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui label">Amirol Ahmad</a></p>
     </div>
   </div>
   
