@@ -13,7 +13,7 @@
 	</h2>
 
 	{{ Form::open(array('autocomplete' => 'off')) }}
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 	  <div class="field">
 	    <label>Full Name</label>
 	    <div class="ui left labeled icon input">
@@ -100,7 +100,7 @@
 		  </div>
 		  @endforeach
 	  </div>
-	  <button type="submit" class="ui small teal submit button"><i class="add sign icon"></i>Create my account</button>
+	  <button type="submit" class="ui small red submit button"><i class="add sign icon"></i>Create my account</button>
 	</div>
 	{{ Form::close() }}
 

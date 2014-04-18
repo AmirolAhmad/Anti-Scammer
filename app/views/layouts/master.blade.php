@@ -28,20 +28,6 @@
 
   </script>
 
-<script type="text/javascript">
-//<![CDATA[[
-$SA = {s:198987, asynch: 1};
-(function() {
-   var sa = document.createElement("script");
-   sa.type = "text/javascript";
-   sa.async = true;
-   sa.src = ("https:" == document.location.protocol ? "https://" + $SA.s + ".sa" : "http://" + $SA.s + ".a") + ".siteapps.com/" + $SA.s + ".js";
-   var t = document.getElementsByTagName("script")[0];
-   t.parentNode.insertBefore(sa, t);
-})();
-//]]>
-</script>
-
 </head>
 <body>
 <?php
@@ -147,7 +133,7 @@ switch($current_page){
       Phone: (+603) 7731-0679 | Email: info@antiscam.me</p>
     </div>
     <div class="eight wide right floated aligned column">
-      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui label">Amirol Ahmad</a></p>
+      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui small label">Amirol Ahmad</a></p>
     </div>
   </div>
   

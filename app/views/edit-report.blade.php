@@ -12,7 +12,7 @@
 	</h2>
 
 	{{ Form::open(array('url' => 'edit-report/' . $report->id, 'files' => true)) }}
-		<div class="ui error form segment">
+		<div class="ui error form piled segment">
 		  <div class="two fields">
 			  <div class="field">
 		    	<label>Scammer Name</label>
@@ -243,7 +243,7 @@
 			  </div>
 			  @endforeach
 		  </div>
-		  <button type="submit" class="ui teal submit button"><i class="file icon"></i> Update report</button>
+		  <button type="submit" class="ui red submit button"><i class="file icon"></i> Update report</button>
 		</div>
 	{{ Form::close() }}
 

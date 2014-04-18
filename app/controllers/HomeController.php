@@ -312,4 +312,10 @@ class HomeController extends BaseController {
 
 	}
 
+	public function getHelp() {
+
+		return View::make('help');
+
+	}
+
 }

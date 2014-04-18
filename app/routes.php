@@ -8,6 +8,9 @@ Route::get('/view/{id}', array('as' => 'view', 'uses' => 'HomeController@getView
 /* View All Report (GET) */
 Route::get('/browse', array('as' => 'browse', 'uses' => 'HomeController@getBrowseReport'));
 
+/* Show Help Page (GET) */
+Route::get('/help', array('as' => 'help', 'uses' => 'HomeController@getHelp'));
+
 /* Error Page 404 */
 App::missing(function($exception){ return Response::view('errors.missing', array(), 404); });
 

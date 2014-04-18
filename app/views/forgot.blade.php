@@ -13,7 +13,7 @@
 	</h2>
 
 	{{ Form::open(array('autocomplete' => 'off')) }}
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 		@if(Session::has('global'))
 		<div class="ui red message">{{ Session::get('global') }}</div>
 		@endif
@@ -32,7 +32,7 @@
 	    <p>{{ $error }}</p>
 	  </div>
 	  @endforeach
-	  <button type="submit" class="ui small teal submit button"><i class="mail icon"></i> Reset my account</button>
+	  <button type="submit" class="ui small red submit button"><i class="mail icon"></i> Reset my account</button>
 	</div>
 	{{ Form::close() }}
 

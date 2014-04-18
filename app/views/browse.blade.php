@@ -6,12 +6,23 @@
 
   <div class="ui info icon message">
     <i class="close icon"></i>
-    <i class="inbox icon"></i>
+    <i class="thumbs up outline icon"></i>
     <div class="content">
       <div class="header">
         Raise your hand and help the world.
       </div>
-      <p>Statistic showing that every 6 hours per day, 2 people has been scammed from all over the world!</p>
+      <p>If you are a victim or just want to report a scamming activities did by someone, you come to the right place. Register and submit a report and let the world know who is that scammer.</p>
+      <div class="ui tiny buttons">
+        <a href="{{ url('/register') }}" class="ui red button">
+          <i class="add icon"></i>
+          Register
+        </a>
+        <div class="or"></div>
+        <a href="{{ url('/login') }}" class="ui purple button">
+          <i class="user icon"></i>
+          Sign in
+        </a>
+      </div>
     </div>
   </div>
 

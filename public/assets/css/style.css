@@ -105,6 +105,10 @@ p a {
   padding-bottom: 3.5rem;
 }
 
+.ui.page.grid.segment.announcement {
+  padding-top: 0em;
+}
+
 .masthead.segment {
   background-image: url(images/bg.jpg);
   -webkit-background-size: cover;

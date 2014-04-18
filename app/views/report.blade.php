@@ -11,7 +11,7 @@
 	</h2>
 	
 	{{ Form::open(array('files' => true)) }}
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 	  <div class="two fields">
 		  <div class="field">
 	    	<label>Scammer Name</label>

@@ -12,7 +12,7 @@
 	</h2>
 
 	<?php echo Form::open(); ?>
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 		<?php if(Session::has('success')): ?>
 	  <div class="ui blue message"><?php echo Session::get('success'); ?></div>
 	  <?php endif; ?>
@@ -54,7 +54,7 @@
 	    <p><?php echo $error; ?></p>
 	  </div>
 	  <?php endforeach; ?>
-	  <button type="submit" class="ui small teal submit button"><i class="key icon"></i> Update my password</button>
+	  <button type="submit" class="ui small red submit button"><i class="key icon"></i> Update my password</button>
 	</div>
 	<?php echo Form::close(); ?>
 

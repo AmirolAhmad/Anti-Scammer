@@ -19,7 +19,7 @@
 	</h2>
 
 	{{ Form::open(array('autocomplete' => 'off')) }}
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 	  <div class="field">
 	    <label>Username</label>
 	    <div class="ui left labeled icon input">
@@ -52,7 +52,7 @@
 	  </div>
 	  @endforeach
 	  <div class="inline field">
-	  	<button type="submit" class="ui small teal submit button"><i class="sign in icon"></i> Login</button>
+	  	<button type="submit" class="ui small red submit button"><i class="sign in icon"></i> Login</button>
 	  	<a href="{{ url('/forgot') }}" class="ui basic mini button">Forgot password? Click here</a>
 	  </div>
 	</div>

@@ -13,7 +13,7 @@
 	</h2>
 
 	{{ Form::open() }}
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 		@if(Session::has('success'))
 	  <div class="ui blue message">{{ Session::get('success') }}</div>
 	  @endif
@@ -55,7 +55,7 @@
 	    <p>{{ $error }}</p>
 	  </div>
 	  @endforeach
-	  <button type="submit" class="ui small teal submit button"><i class="key icon"></i> Update my password</button>
+	  <button type="submit" class="ui small red submit button"><i class="key icon"></i> Update my password</button>
 	</div>
 	{{ Form::close() }}
 

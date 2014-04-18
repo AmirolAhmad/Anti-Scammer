@@ -12,7 +12,7 @@
 	</h2>
 
 	<?php echo Form::open(array('autocomplete' => 'off')); ?>
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 		<?php if(Session::has('global')): ?>
 		<div class="ui red message"><?php echo Session::get('global'); ?></div>
 		<?php endif; ?>
@@ -31,7 +31,7 @@
 	    <p><?php echo $error; ?></p>
 	  </div>
 	  <?php endforeach; ?>
-	  <button type="submit" class="ui small teal submit button"><i class="mail icon"></i> Reset my account</button>
+	  <button type="submit" class="ui small red submit button"><i class="mail icon"></i> Reset my account</button>
 	</div>
 	<?php echo Form::close(); ?>
 

@@ -24,7 +24,6 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-50147916-1', 'antiscam.me');
-    ga('require', 'displayfeatures');
     ga('send', 'pageview');
 
   </script>
@@ -134,7 +133,7 @@ switch($current_page){
       Phone: (+603) 7731-0679 | Email: info@antiscam.me</p>
     </div>
     <div class="eight wide right floated aligned column">
-      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui label">Amirol Ahmad</a></p>
+      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui small label">Amirol Ahmad</a></p>
     </div>
   </div>
   
