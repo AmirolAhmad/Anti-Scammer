@@ -92,7 +92,7 @@ class AuthController extends Controller {
 
 				});
 
-				return Redirect::route('login')->with('global', 'Your account has been created. An email confirmation has been send to your email.');
+				return Redirect::route('login')->with('global', 'Your account has been created. An email confirmation has been send to your email. Please check your email inbox/spam.');
 			}
 
 		}
@@ -157,7 +157,7 @@ class AuthController extends Controller {
 						$message->to($user->email, $user->fullname)->subject('Your new password');
 					});
 
-					return Redirect::route('login')->with('global', 'A new password has been sent to your email.');
+					return Redirect::route('login')->with('global', 'A new password has been sent to your email. Please check your email inbox/spam.');
 
 				}
 			}

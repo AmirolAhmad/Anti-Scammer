@@ -24,10 +24,23 @@
     })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
     ga('create', 'UA-50147916-1', 'antiscam.me');
-    ga('require', 'displayfeatures');
     ga('send', 'pageview');
 
   </script>
+
+<script type="text/javascript">
+//<![CDATA[[
+$SA = {s:198987, asynch: 1};
+(function() {
+   var sa = document.createElement("script");
+   sa.type = "text/javascript";
+   sa.async = true;
+   sa.src = ("https:" == document.location.protocol ? "https://" + $SA.s + ".sa" : "http://" + $SA.s + ".a") + ".siteapps.com/" + $SA.s + ".js";
+   var t = document.getElementsByTagName("script")[0];
+   t.parentNode.insertBefore(sa, t);
+})();
+//]]>
+</script>
 
 </head>
 <body>
