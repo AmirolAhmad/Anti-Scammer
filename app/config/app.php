@@ -110,7 +110,7 @@ return array(
 		'Intervention\Image\ImageServiceProvider',
 		'Aws\Laravel\AwsServiceProvider',
 		'GrahamCampbell\Security\SecurityServiceProvider',
-		'GrahamCampbell\Binput\BinputServiceProvider'
+		'GrahamCampbell\Binput\BinputServiceProvider',
 
 	),
 

@@ -54,6 +54,10 @@
 	  	<button type="submit" class="ui small red submit button"><i class="sign in icon"></i> Login</button>
 	  	<a href="<?php echo url('/forgot'); ?>" class="ui basic mini button">Forgot password? Click here</a>
 	  </div>
+	  <a href="<?php echo url('login/fb'); ?>" class="ui facebook button">
+		  <i class="facebook icon"></i>
+		  Facebook
+		</a>
 	</div>
 	<?php echo Form::close(); ?>
 
