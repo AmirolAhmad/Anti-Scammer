@@ -58,6 +58,10 @@ body {
   width: 320px;
 }
 
+.ui.icon.input.custom>.icon {
+  padding-top:1.2em;
+}
+
 /*******************************
           UI Overrides
 *******************************/
@@ -88,7 +92,7 @@ h5.ui.header,
 }
 
 a {
-  color: #009FDA;
+  color: #333333;
   text-decoration: none;
   -webkit-transition: color 0.3s ease;
   -moz-transition: color 0.3s ease;
@@ -96,7 +100,7 @@ a {
 }
 
 a:hover {
-  color: #00BAFF;
+  color: #555555;
 }
 
 p a {
