@@ -34,6 +34,9 @@ Route::group(array('before' => 'guest'), function() {
 
 	});
 
+	/* Verification Message (GET) */
+	Route::get('/verify',function(){ return View::make('/verify'); });
+
 	/* Register Account (GET) */
 	Route::get('/register', array('as' => 'register', 'uses' => 'AuthController@getRegister'));
 

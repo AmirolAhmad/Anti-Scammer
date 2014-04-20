@@ -92,7 +92,7 @@ class AuthController extends Controller {
 
 				});
 
-				return Redirect::route('login')->with('global', 'Your account has been created. An email confirmation has been send to your email. Please check your email inbox/spam.');
+				return View::make('verify');
 			}
 
 		}
