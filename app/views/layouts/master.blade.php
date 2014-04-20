@@ -16,7 +16,8 @@
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/semantic.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script> -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   <script src="{{ URL::asset('assets/js/semantic.min.js') }}"></script>
   <script src="{{ URL::asset('assets/js/style.js') }}"></script>
 
@@ -137,7 +138,7 @@ switch($current_page){
 
     <div class="right menu">
     <div class="item">
-      <div class="ui icon small input">
+      <div class="ui icon small input custom">
         {{ Form::open(array('url' => 'search')) }}
         <input placeholder="Search by name, email, nickname or country" type="text" data-content="Insert your search query here." name="search">
         {{ Form::close() }}
@@ -180,7 +181,7 @@ switch($current_page){
       Phone: (+603) 7731-0679 | Email: info@antiscam.me</p>
     </div>
     <div class="eight wide right floated aligned column">
-      <p>Developed and build with love and care by <a href="https://twitter.com/AmirolAhmad" class="ui small label">Amirol Ahmad</a> & <a href="https://twitter.com/LisaAndrieva" class="ui small label">Evalisa Andria</a></p>
+      <p>Antiscam.me was created by <a href="https://twitter.com/AmirolAhmad" target="_blank">Amirol Ahmad</a> & <a href="https://twitter.com/LisaAndrieva" target="_blank">Evalisa Andria</a></p>
     </div>
   </div>
 
