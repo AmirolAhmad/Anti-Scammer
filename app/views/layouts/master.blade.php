@@ -13,12 +13,11 @@
 
   <link rel="shortcut icon" href="{{ URL::asset('assets/favicon.ico') }}">
 
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/semantic.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/semantic.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ URL::asset('assets/css/style.css') }}">
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.js"></script>
-  <script src="{{ URL::asset('assets/js/semantic.js') }}"></script>
+  <script src="{{ URL::asset('assets/js/semantic.min.js') }}"></script>
   <script src="{{ URL::asset('assets/js/style.js') }}"></script>
 
   <script>

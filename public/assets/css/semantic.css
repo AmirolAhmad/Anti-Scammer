@@ -9463,7 +9463,8 @@ img.ui.image {
 
 .ui.input input {
   width: 100%;
-  font-family: "Helvetica Neue", "Helvetica", Arial;
+  /*font-family: "Helvetica Neue", "Helvetica", Arial;*/
+  font-family: 'proxima_nova_alt_regular', sans-serif;
   margin: 0em;
   padding: 0.65em 1em;
   font-size: 1em;
@@ -9597,7 +9598,7 @@ img.ui.image {
   margin: 0em;
   width: 2.6em;
   height: 100%;
-  padding-top: 0.82em;
+  padding-top: 1.2em;
   text-align: center;
   border-radius: 0em 0.3125em 0.3125em 0em;
   -webkit-box-sizing: border-box;

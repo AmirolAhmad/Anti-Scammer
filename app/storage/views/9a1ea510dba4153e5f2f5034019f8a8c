@@ -51,22 +51,22 @@
 <main class="ui four column grid">
 	<aside class="column">
 		<div class="ui list">
-			<div class="item"><a>@Support</a></div>
+			<div class="item"><a href="https://twitter.com/antiscamme" target="_blank">@Support</a></div>
 		</div>
 	</aside>
 	<section class="column">
 		<div class="ui list">
-			<div class="item"><a>Contact Support</a></div>
+			<div class="item"><a href="http://antiscam.uservoice.com/forums/249101-general" target="_blank">Contact Support</a></div>
 		</div>
 	</section>
 	<section class="column">
 		<div class="ui list">
-			<div class="item"><a>Twitter Status Updates</a></div>
+			<div class="item"><a href="https://twitter.com/antiscamme/lists/anti-scam-me" target="_blank">Twitter Updates by Anti-Scam Staff</a></div>
 		</div>
 	</section>
 	<section class="column">
 		<div class="ui list">
-			<div class="item"><a>Official Anti-Scam Blog</a></div>
+			<div class="item"><a href="https://www.facebook.com/fraud.details" target="_blank">Official Facebook Page</a></div>
 		</div>
 	</section>
 </main>

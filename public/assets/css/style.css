@@ -2,14 +2,25 @@
             Global
 *******************************/
 
+@font-face {
+    font-family: 'proxima_nova_alt_regular';
+    src: url(../fonts/proxima_nova_alt_regular-webfont.eot);
+    src: url(../fonts/proxima_nova_alt_regular-webfont.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/proxima_nova_alt_regular-webfont.woff) format('woff'),
+         url(../fonts/proxima_nova_alt_regular-webfont.ttf) format('truetype'),
+         url(../fonts/proxima_nova_alt_regular-webfont.svg#proxima_nova_alt_regular) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 html,
 body {
-  font-size: 14px;
+  font-size: 15px;
   height: 100%;
 }
 
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima_nova_alt_regular', sans-serif;
   background: #FFFFFF;
   margin: 0px;
   padding: 0px;
@@ -52,7 +63,7 @@ body {
 *******************************/
 
 .ui.header {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'proxima_nova_alt_regular', sans-serif;
 }
 
 .ui.header,
