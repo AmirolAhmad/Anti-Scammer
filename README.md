@@ -2,6 +2,8 @@
 
 [![ProjectStatus](http://stillmaintained.com/AmirolAhmad/Anti-Scammer.png)](http://stillmaintained.com/AmirolAhmad/Anti-Scammer)
 
+[![Dependency Status](https://gemnasium.com/AmirolAhmad/Anti-Scammer.png)](https://gemnasium.com/AmirolAhmad/Anti-Scammer)
+
 Raise your hand and help the world. If you are a victim or just want to report a scamming activities did by someone, you come to the right place. Register and submit a report and let the world know who is that scammer. Let's build the safe world together
 
 ### Creator
