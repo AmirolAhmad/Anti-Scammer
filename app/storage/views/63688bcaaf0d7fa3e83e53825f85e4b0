@@ -1,4 +1,8 @@
 
+<?php $__env->startSection('title'); ?> 
+	Scammer details | Anti-Scam Me
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
 
 <div class="container-login">
@@ -9,28 +13,48 @@
 		<div class="field">
 	  	<center>
 	  		<div class="ui">
+	  			<?php if($report->profile_picture): ?>
 		  		<img class="circular ui image content" src="<?php echo $report->profile_picture; ?>" width="200" height="200">
+		  		<?php else: ?>
+			    <img class="circular ui image content" src="<?php echo URL::asset('img/default-avatar2.jpg'); ?>" width="200" height="200">
+			    <?php endif; ?>
 		  	</div>
 	  	</center>
 	  </div>
 	  <div class="two fields">
 		  <div class="field">
 		    <div class="ui ribbon label">Nickname</div>
+		    <?php if($report->nickname): ?>
 		    <p><?php echo $report->nickname; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		  <div class="field">
 		    <div class="ui ribbon label">Scammer Email</div>
+		    <?php if($report->scammer_email): ?>
 		    <p><?php echo $report->scammer_email; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		</div>
 	  <div class="two fields">
 		  <div class="field">
 		    <div class="ui ribbon label">Age</div>
+		    <?php if($report->age): ?>
 		    <p><?php echo $report->age; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		  <div class="field">
 		    <div class="ui ribbon label">Date of birth</div>
+		    <?php if($report->dob): ?>
 		    <p><?php echo $report->dob; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		</div>
 	  <div class="two fields">
@@ -40,12 +64,20 @@
 		  </div>
 		  <div class="field">
 		    <div class="ui ribbon label">Passport/Identification Card Number</div>
+		    <?php if($report->ic_number): ?>
 		    <p><?php echo $report->ic_number; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		</div>
 		<div class="field">
 		    <div class="ui ribbon label">Contact Number</div>
+		    <?php if($report->contact_number): ?>
 		    <p><?php echo $report->contact_number; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		<div class="ui inverted divider"></div>
 	  <div class="two fields">
@@ -62,11 +94,19 @@
 	  <div class="two fields">
 		  <div class="field">
 		    <div class="ui ribbon label">Account Bank Number</div>
+		    <?php if($report->acc_bank_number): ?>
 		    <p><?php echo $report->acc_bank_number; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		  <div class="field">
 		    <div class="ui ribbon label">Bank Name</div>
+		    <?php if($report->bank_name): ?>
 		    <p><?php echo $report->bank_name; ?></p>
+		    <?php else: ?>
+		    <p>N/A</p>
+		    <?php endif; ?>
 		  </div>
 		</div>
 		<div class="ui inverted divider"></div>

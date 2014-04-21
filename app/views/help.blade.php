@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+	Help Center | Anti-Scam Me
+@stop
+
 @section('content')
 
 <div class="container">

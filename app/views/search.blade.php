@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+  Search what you want | Anti-Scam Me
+@stop
+
 @section('content')
 
 @if($reports)
@@ -24,7 +28,7 @@
   <table class="ui table segment">
     <thead>
       <tr>
-        <th>Reported By</th>
+        <!-- <th>Reported By</th> -->
         <th>Scammer Name</th>
         <th>Subject</th>
         <th>Location</th>
@@ -34,7 +38,7 @@
     <tbody>
       @foreach ($reports as $report)
       <tr>
-        <td>{{ $report->reporter }}</td>
+        <!-- <td>{{ $report->reporter }}</td> -->
         <td>
           <img class="ui avatar image" src="{{ URL::to($report->profile_picture); }}"> {{ $report->scammer_name }}
         </td>

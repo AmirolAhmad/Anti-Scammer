@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+	Edit my report | Anti-Scam Me
+@stop
+
 @section('content')
 
 <div class="container-report">
@@ -70,7 +74,7 @@
 			  <div class="field">
 		    	<label>Date of Birth</label>
 			    <div class="ui left labeled icon input">
-			      <input type="text" name="dob"  value="{{ $report->dob }}">
+			      <input type="text" name="dob"  value="{{ $report->dob }}" data-content="The date format should be dd/mm/yyyy">
 			      <i class="calendar icon"></i>
 			    </div>
 				  @foreach ($errors->get('dob') as $error)
@@ -112,10 +116,11 @@
 		  <div class="field">
 		    <label>Scammer Picture</label>
 		    <div class="ui left labeled icon input">
-		    	<img class="rounded ui image" src="{{ $report->profile_picture }}">
+		    	<img class="rounded ui image" src="{{ $report->profile_picture }}" width="200px">
 		    </div>
 		    <div class="ui left labeled icon input">
 		      <input type="file" name="profile_picture">
+		    	<p><small>For best result, your image width should be 200px.</small></p>
 		      <i class="camera icon"></i>
 		    </div>
 			  @foreach ($errors->get('profile_picture') as $error)
@@ -155,12 +160,12 @@
 				</div>
 		  </div>
 		  <div class="ui horizontal icon divider">
-			  <i class="circular file icon"></i>
+			  <i class="circular dollar icon"></i>
 			</div>
 		  <div class="field">
 		    <label>Scammer Contact Number</label>
 		    <div class="ui left labeled icon input">
-		      <input type="text" name="contact_number" value="{{ $report->contact_number }}">
+		      <input type="text" name="contact_number" value="{{ $report->contact_number }}" data-content="Must include country code. Ex: +6010123456789">
 		      <i class="phone icon"></i>
 		      <div class="ui corner label">
 		        <i class="icon asterisk"></i>
@@ -220,6 +225,7 @@
 		    <div class="ui left labeled icon input">
 		    	<label>Description</label>
 		    	<textarea type="text" name="description">{{ $report->description }}</textarea>
+		    	<p><small>Please describe in details such as how you meet the scammer, the date, time, and place of doing transaction, include any other reference link like facebook status, other forum post.</small></p>
 				  @foreach ($errors->get('description') as $error)
 				  <div class="ui red pointing above ui label">
 				    {{ $error }}
@@ -231,6 +237,7 @@
 		    <label>Attachment</label>
 		    <div class="ui left labeled icon input">
 		      <input type="file" name="attachment">
+		    	<p><small>Atttach any file that you have such as police report, screenshot, picture etc.</small></p>
 		      <i class="file icon"></i>
 		    </div>
 		    <div class="ui left labeled icon input">

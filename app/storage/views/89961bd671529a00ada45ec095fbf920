@@ -1,1 +1,17 @@
-Sorry. Error 404
+
+<?php $__env->startSection('content'); ?>
+
+<div class="container-login">
+
+  <div class="ui error message">
+	  <div class="header">
+	    Ops! Seems like Error 404! We can't find that for you. But we have this for you!
+	  </div>
+	</div>
+	 
+	 <img class="ui huge image" src="<?php echo URL::to('img/search-error.jpg');; ?>">
+
+</div>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.master', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

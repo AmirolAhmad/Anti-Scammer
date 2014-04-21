@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+  My submitted list of scammer | Anti-Scam Me
+@stop
+
 @section('content')
 
 <div class="container">
@@ -39,7 +43,11 @@
       @foreach ($reports as $report)
       <tr>
         <td>
+          @if($report->profile_picture)
           <img class="ui avatar image" src="{{ URL::to($report->profile_picture); }}"> {{ $report->scammer_name }}
+          @else
+          <img class="ui avatar image" src="{{ URL::asset('img/default-avatar2.jpg') }}">  {{ $report->scammer_name }}
+          @endif
         </td>
         <td>{{ $report->subject }}</td>
         <td>{{ $report->location }}, {{ $report->country }}</td>

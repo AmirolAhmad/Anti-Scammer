@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+	Create your free account | Anti-Scam Me
+@stop
+
 @section('content')
 
 <div class="container-login">

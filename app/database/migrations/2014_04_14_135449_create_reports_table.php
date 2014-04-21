@@ -31,7 +31,7 @@ class CreateReportsTable extends Migration {
 			$table->string('contact_number');
 			$table->integer('acc_bank_number');
 			$table->string('bank_name');
-			$table->string('description');
+			$table->text('description');
 			$table->timestamps();
 		});
 	}

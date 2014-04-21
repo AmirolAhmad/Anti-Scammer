@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+	Submit a scamming report | Anti-Scam Me
+@stop
+
 @section('content')
 <div class="container-report">
 	<h2 class="ui header">
@@ -112,6 +116,7 @@
 	    <label>Scammer Picture</label>
 	    <div class="ui left labeled icon input">
 	      <input type="file" name="profile_picture"{{ (Input::old('profile_picture')) ? ' value="' . e(Input::old('profile_picture')) . '"' : '' }}>
+	      <p><small>For best result, your image width should be 200px.</small></p>
 	      <i class="camera icon"></i>
 	    </div>
 		  @foreach ($errors->get('profile_picture') as $error)
@@ -216,6 +221,7 @@
 	    <div class="ui left labeled icon input">
 	    	<label>Description</label>
 	    	<textarea type="text" name="description"></textarea>
+	    	<p><small>Please describe in details such as how you meet the scammer, the date, time, and place of doing transaction, include any other reference link like facebook status, other forum post.</small></p>
 			  @foreach ($errors->get('description') as $error)
 			  <div class="ui red pointing above ui label">
 			    {{ $error }}
@@ -227,6 +233,7 @@
 	    <label>Attachment</label>
 	    <div class="ui left labeled icon input">
 	      <input type="file" name="attachment"{{ (Input::old('attachment')) ? ' value="' . e(Input::old('attachment')) . '"' : '' }}>
+	      <p><small>Atttach any file that you have such as police report, screenshot, picture etc.</small></p>
 	      <i class="file icon"></i>
 	    </div>
 		  @foreach ($errors->get('attachment') as $error)

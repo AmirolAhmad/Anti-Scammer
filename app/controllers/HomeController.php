@@ -45,10 +45,10 @@ class HomeController extends BaseController {
 			'subject' 					=> 'required|min:3|max:255',
 			'location' 					=> 'required|min:3|max:100',
 			'country' 					=> 'required',
-			'contact_number' 		=> 'required|numeric',
+			'contact_number' 		=> 'numeric',
 			'acc_bank_number'		=> 'numeric|min:3',
 			'bank_name' 				=> 'min:3|max:50',
-			'description'				=> 'required|min:3|max:255'
+			'description'				=> 'required|min:3'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);
@@ -225,10 +225,10 @@ class HomeController extends BaseController {
 			'subject' 					=> 'required|min:3|max:255',
 			'location' 					=> 'required|min:3|max:100',
 			'country' 					=> 'required',
-			'contact_number' 		=> 'required|numeric',
-			'acc_bank_number'		=> 'numeric|min:3',
+			'contact_number' 		=> 'numeric',
+			'acc_bank_number'		=> 'numeric',
 			'bank_name' 				=> 'min:3|max:50',
-			'description'				=> 'required|min:3|max:255'
+			'description'				=> 'required|min:3'
 		);
 
 		$validator = Validator::make(Input::all(), $rules);

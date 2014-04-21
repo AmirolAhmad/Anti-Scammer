@@ -1,4 +1,8 @@
 
+<?php $__env->startSection('title'); ?> 
+	Submit a scamming report | Anti-Scam Me
+<?php $__env->stopSection(); ?>
+
 <?php $__env->startSection('content'); ?>
 <div class="container-report">
 	<h2 class="ui header">
@@ -10,7 +14,7 @@
 	</h2>
 	
 	<?php echo Form::open(array('files' => true)); ?>
-	<div class="ui error form segment">
+	<div class="ui error form piled segment">
 	  <div class="two fields">
 		  <div class="field">
 	    	<label>Scammer Name</label>
@@ -111,6 +115,7 @@
 	    <label>Scammer Picture</label>
 	    <div class="ui left labeled icon input">
 	      <input type="file" name="profile_picture"<?php echo (Input::old('profile_picture')) ? ' value="' . e(Input::old('profile_picture')) . '"' : ''; ?>>
+	      <p><small>For best result, your image width should be 200px.</small></p>
 	      <i class="camera icon"></i>
 	    </div>
 		  <?php foreach ($errors->get('profile_picture') as $error): ?>
@@ -215,6 +220,7 @@
 	    <div class="ui left labeled icon input">
 	    	<label>Description</label>
 	    	<textarea type="text" name="description"></textarea>
+	    	<p><small>Please describe in details such as how you meet the scammer, the date, time, and place of doing transaction, include any other reference link like facebook status, other forum post.</small></p>
 			  <?php foreach ($errors->get('description') as $error): ?>
 			  <div class="ui red pointing above ui label">
 			    <?php echo $error; ?>
@@ -226,6 +232,7 @@
 	    <label>Attachment</label>
 	    <div class="ui left labeled icon input">
 	      <input type="file" name="attachment"<?php echo (Input::old('attachment')) ? ' value="' . e(Input::old('attachment')) . '"' : ''; ?>>
+	      <p><small>Atttach any file that you have such as police report, screenshot, picture etc.</small></p>
 	      <i class="file icon"></i>
 	    </div>
 		  <?php foreach ($errors->get('attachment') as $error): ?>

@@ -9,7 +9,7 @@
   <meta name="keywords" content="anti scam,anti scammer,scammer,scamming activities,fraud,penipu,fraud people,scammer database,fraud database,dishonest individual,money,trick,lottery,baiting,email spoofing,phishing,request,duit,skim cepat kaya,mlm,multi level marketing,black market,nigeria,black money,russian">
   <meta name="author" content="Anti Scam Me">
 
-  <title>Anti Scam Me</title>
+  <title>@yield('title')</title>
 
   <link rel="shortcut icon" href="{{ URL::asset('assets/favicon.ico') }}">
 
@@ -73,42 +73,60 @@
   UserVoice.push(['autoprompt', {}]);
   </script>
 
+
+
+  <!-- Facebook JS SDK start -->
+  <script>(function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=1428589384065063";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));</script>
+  <!-- Facebook JS SDK end -->
+
+  <!-- Twitter JS start -->
+  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+  <!-- Facebook JS end -->
+
 </head>
 <body>
-<?php
-$current_url = $_SERVER['REQUEST_URI'];
-$current_page = end((explode('/', $current_url)));
-$home = '';
-$login = '';
-$register = '';
-$report = '';
-$list = '';
-$browse = '';
-$help = '';
-switch($current_page){
-    case 'login':
-        $login = 'active';
-        break;
-    case 'register':
-        $register = 'active';
-        break;
-    case 'report':
-        $report = 'active';
-        break;
-    case 'list':
-        $list = 'active';
-        break;
-    case 'browse':
-        $browse = 'active';
-        break;
-    case 'help':
-        $help = 'active';
-        break;
-    default:
-        $home = 'active';
-        break;
-}
-?>
+  <?php
+  $current_url = $_SERVER['REQUEST_URI'];
+  $current_page = end((explode('/', $current_url)));
+  $home = '';
+  $login = '';
+  $register = '';
+  $report = '';
+  $list = '';
+  $browse = '';
+  $help = '';
+  switch($current_page){
+      case 'login':
+          $login = 'active';
+          break;
+      case 'register':
+          $register = 'active';
+          break;
+      case 'report':
+          $report = 'active';
+          break;
+      case 'list':
+          $list = 'active';
+          break;
+      case 'browse':
+          $browse = 'active';
+          break;
+      case 'help':
+          $help = 'active';
+          break;
+      default:
+          $home = 'active';
+          break;
+  }
+  ?>
+
+
   <!-- Top Menu -->
   <div class="ui teal inverted small menu no-border">
     <a href="{{ url('/') }}" class="{{ $home }} item">
@@ -120,7 +138,7 @@ switch($current_page){
 
     @if(Auth::check())
     <div class="ui dropdown item">
-      Report <i class="dropdown icon"></i>
+      <i class="file icon"></i> Report <i class="dropdown icon"></i>
       <div class="menu">
         <a class="{{ $report }} item" href="{{ URL::route('report') }}">
           <i class="edit icon"></i> Submit a report
@@ -136,11 +154,17 @@ switch($current_page){
     </a>
     @endif
 
+    <div class="fb-like item" data-href="https://www.facebook.com/fraud.details" data-width="100" data-layout="button_count" data-action="like" data-show-faces="false" data-share="true" style="top:-5px"></div>
+
+    <!-- <div style="position:relative;top:15px"> -->
+    <a href="https://twitter.com/antiscamme" class="twitter-follow-button" data-show-count="true" data-lang="en" data-width="100">Follow @antiscamme</a>
+  <!-- </div> -->
+
     <div class="right menu">
     <div class="item">
       <div class="ui icon small input custom">
         {{ Form::open(array('url' => 'search')) }}
-        <input placeholder="Search by name, email, nickname or country" type="text" data-content="Insert your search query here." name="search">
+        <input placeholder="Search by scammer name, email, nickname or country" type="text" data-content="Insert your search query here." name="search">
         {{ Form::close() }}
         <i class="search link icon"></i>
       </div>
@@ -176,9 +200,8 @@ switch($current_page){
 
   <div class="ui inverted teal page grid segment">
     <div class="eight wide column">
-      <h3>Osem Network Enterprise</h3>
-      <p>No 595 Lorong 94, Taman Ria 08000 Sungai Petani, Kedah MALAYSIA <br>
-      Phone: (+603) 7731-0679 | Email: info@antiscam.me</p>
+      <h3>Osem Network Enterprise <small>(JR0030583-X)</small></h3>
+      <p>Email: info@antiscam.me</p>
     </div>
     <div class="eight wide right floated aligned column">
       <p>Antiscam.me was created by <a href="https://twitter.com/AmirolAhmad" target="_blank">Amirol Ahmad</a> & <a href="https://twitter.com/LisaAndrieva" target="_blank">Evalisa Andria</a></p>

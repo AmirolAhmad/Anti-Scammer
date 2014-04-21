@@ -1,5 +1,9 @@
 @extends('layouts.master')
 
+@section('title') 
+   Anti-Scam Me | Let's build the safe world together
+@stop
+
 @section('content')
 <div class="container">
 
@@ -44,19 +48,23 @@
       <table class="ui table segment">
         <thead>
           <tr>
-            <th>Reported By</th>
+            <!-- <th>Reported By</th> -->
             <th>Scammer Name</th>
             <th>Subject</th>
             <th>Location</th>
-            <th>Action</th>
+            <th class="two wide">Action</th>
           </tr>
         </thead>
         <tbody>
           @foreach ($reports as $report)
           <tr>
-            <td>{{ $report->reporter }}</td>
+            <!-- <td>{{ $report->reporter }}</td> -->
             <td>
+              @if($report->profile_picture)
               <img class="ui avatar image" src="{{ URL::to($report->profile_picture); }}"> {{ $report->scammer_name }}
+              @else
+              <img class="ui avatar image" src="{{ URL::asset('img/default-avatar2.jpg') }}">  {{ $report->scammer_name }}
+              @endif
             </td>
             <td>{{ $report->subject }}</td>
             <td>{{ $report->location }}, {{ $report->country }}</td>
@@ -64,8 +72,8 @@
               <a href="{{ url('/view/' . $report->id) }}" class="icon mini teal ui button" data-content="View more info">
                 <i class="info icon"></i>
               </a>
-              <div class="icon mini red ui button" data-content="Request to remove">
-                <i class="mail icon"></i>
+              <div class="icon mini red ui button" data-content="Flag as invalid">
+                <i class="flag icon"></i>
               </div>
             </td>
           </tr>
@@ -131,13 +139,15 @@
       <div class="ui secondary form segment">
         <h3 class="ui header">Get Our Amazing Newsletter Bi-Daily</h3>
         <p>Sign up and get spammed with cats every day. We have no unsubscribe button!</p>
+        <form action="http://antiscam.us4.list-manage.com/subscribe/post?u=bd50937a4220eba452447a57b&amp;id=35de891676" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
         <div class="field">
           <div class="ui left icon action input">
             <i class="user icon"></i>
-            <input name="email" type="text" placeholder="name@email.com">
-            <div class="ui teal submit button">Sign up</div>
+            <input name="EMAIL" type="email" placeholder="name@email.com" value="" id="mce-EMAIL">
+            <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="ui teal submit button" value="Subscribe">
           </div>
         </div>
+        </form>
         <div class="ui error message"></div>
       </div>
     </div>

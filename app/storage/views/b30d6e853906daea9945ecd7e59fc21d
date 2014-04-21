@@ -1,22 +1,22 @@
 
-<?php $__env->startSection('message'); ?>
-  <div class="container">
-    <div class="ui info icon message">
-    	<i class="close icon"></i>
-      <i class="inbox icon"></i>
-      <div class="content">
-        <div class="header">
-          Raise your hand and help the world.
-        </div>
-        <p>Statistic showing that every 6 hours per day, 2 people has been scammed from all over the world!</p>
-      </div>
-    </div>
-  </div>
+<?php $__env->startSection('title'); ?> 
+  My submitted list of scammer | Anti-Scam Me
 <?php $__env->stopSection(); ?>
 
 <?php $__env->startSection('content'); ?>
 
 <div class="container">
+
+  <div class="ui info icon message">
+    <i class="close icon"></i>
+    <i class="inbox icon"></i>
+    <div class="content">
+      <div class="header">
+        Raise your hand and help the world.
+      </div>
+      <p>Statistic showing that every 6 hours per day, 2 people has been scammed from all over the world!</p>
+    </div>
+  </div>
 
 <?php if(Session::has('global')): ?>
 <div class="ui red message"><?php echo Session::get('global'); ?></div>
@@ -42,7 +42,11 @@
       <?php foreach ($reports as $report): ?>
       <tr>
         <td>
+          <?php if($report->profile_picture): ?>
           <img class="ui avatar image" src="<?php echo URL::to($report->profile_picture);; ?>"> <?php echo $report->scammer_name; ?>
+          <?php else: ?>
+          <img class="ui avatar image" src="<?php echo URL::asset('img/default-avatar2.jpg'); ?>">  <?php echo $report->scammer_name; ?>
+          <?php endif; ?>
         </td>
         <td><?php echo $report->subject; ?></td>
         <td><?php echo $report->location; ?>, <?php echo $report->country; ?></td>
@@ -53,9 +57,6 @@
           <a href="<?php echo url('/edit-report/' . $report->id); ?>" class="icon mini purple ui button" data-content="Click to edit">
             <i class="edit icon"></i>
           </a>
-          <div class="icon mini red ui button" data-content="Click to copy the URL">
-            <i class="external url icon"></i>
-          </div>
         </td>
       </tr>
       <?php endforeach; ?>
