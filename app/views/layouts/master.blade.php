@@ -205,6 +205,14 @@
     </div>
     <div class="eight wide right floated aligned column">
       <p>Antiscam.me was created by <a href="https://twitter.com/AmirolAhmad" target="_blank">Amirol Ahmad</a> & <a href="https://twitter.com/LisaAndrieva" target="_blank">Evalisa Andria</a></p>
+      <a href="https://www.facebook.com/fraud.details" target="_blank" class="ui facebook button">
+        <i class="facebook icon"></i>
+        Facebook
+      </a>
+      <a href="https://twitter.com/antiscamme" target="_blank" class="ui twitter button">
+        <i class="twitter icon"></i>
+        Twitter
+      </a>
     </div>
   </div>
 
