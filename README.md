@@ -9,7 +9,7 @@ Raise your hand and help the world. If you are a victim or just want to report a
 1. [@AmirolAhmad](https://twitter.com/AmirolAhmad)
 2. [@LisaAndrieva](https://twitter.com/LisaAndrieva)
 
-**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+**All issues and pull requests should be filed on the [Anti-Scam Me issues](https://github.com/AmirolAhmad/Anti-Scammer/issues).**
 
 ### License
 
