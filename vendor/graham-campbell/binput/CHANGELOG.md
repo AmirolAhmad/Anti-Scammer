@@ -7,10 +7,11 @@ CHANGE LOG
 * Upgrade to Laravel 4.2
 
 
-## V1.1 (Upcoming)
+## V1.1 (20/04/2014)
 
 * PHP 5.6 and HHVM compatibility
 * Added a new map function
+* Fixed request binding
 * Composer tweaks
 * Minor tweaks
 

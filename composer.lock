@@ -3,7 +3,7 @@
         "This file locks the dependencies of your project to a known state",
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file"
     ],
-    "hash": "19d32998fa2bfb0d535048546bff0bbb",
+    "hash": "b111d4c4b380a398946300b67ac851bc",
     "packages": [
         {
             "name": "aws/aws-sdk-php",
@@ -310,12 +310,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Binput.git",
-                "reference": "4df4ef54b0cbb18c9d14c7445505d6dfa7e67cb8"
+                "reference": "b9df7df79993adf668297faa6f9cb139ba8d50a0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/4df4ef54b0cbb18c9d14c7445505d6dfa7e67cb8",
-                "reference": "4df4ef54b0cbb18c9d14c7445505d6dfa7e67cb8",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Binput/zipball/b9df7df79993adf668297faa6f9cb139ba8d50a0",
+                "reference": "b9df7df79993adf668297faa6f9cb139ba8d50a0",
                 "shasum": ""
             },
             "require": {
@@ -363,7 +363,7 @@
                 "input",
                 "laravel"
             ],
-            "time": "2014-04-17 23:02:18"
+            "time": "2014-04-20 22:42:44"
         },
         {
             "name": "graham-campbell/security",
@@ -371,12 +371,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/GrahamCampbell/Laravel-Security.git",
-                "reference": "f24c14c124f1fb3ea555ddf55c34cda2e433f51a"
+                "reference": "e0f36de824a977347ad95977bd72001fd03c966a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/f24c14c124f1fb3ea555ddf55c34cda2e433f51a",
-                "reference": "f24c14c124f1fb3ea555ddf55c34cda2e433f51a",
+                "url": "https://api.github.com/repos/GrahamCampbell/Laravel-Security/zipball/e0f36de824a977347ad95977bd72001fd03c966a",
+                "reference": "e0f36de824a977347ad95977bd72001fd03c966a",
                 "shasum": ""
             },
             "require": {
@@ -421,7 +421,7 @@
                 "laravel",
                 "security"
             ],
-            "time": "2014-04-17 23:02:05"
+            "time": "2014-04-20 22:41:17"
         },
         {
             "name": "guzzle/guzzle",
@@ -773,16 +773,16 @@
         },
         {
             "name": "monolog/monolog",
-            "version": "1.8.0",
+            "version": "1.9.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Seldaek/monolog.git",
-                "reference": "392ef35fd470638e08d0160d6b1cbab63cb23174"
+                "reference": "1afc39690e7414412face1f8cbf67b73db34485c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/392ef35fd470638e08d0160d6b1cbab63cb23174",
-                "reference": "392ef35fd470638e08d0160d6b1cbab63cb23174",
+                "url": "https://api.github.com/repos/Seldaek/monolog/zipball/1afc39690e7414412face1f8cbf67b73db34485c",
+                "reference": "1afc39690e7414412face1f8cbf67b73db34485c",
                 "shasum": ""
             },
             "require": {
@@ -810,7 +810,7 @@
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.8.x-dev"
+                    "dev-master": "1.9.x-dev"
                 }
             },
             "autoload": {
@@ -837,7 +837,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2014-03-23 19:50:26"
+            "time": "2014-04-20 16:41:26"
         },
         {
             "name": "nesbot/carbon",
