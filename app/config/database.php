@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'antiscam',
+			'database'  => 'heroku_00d35f5f356e513',
 			'username'  => 'root',
 			'password'  => 'root',
 			'charset'   => 'utf8',
