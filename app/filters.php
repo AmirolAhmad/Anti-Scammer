@@ -14,11 +14,6 @@
 App::before(function($request)
 {
 	Input::merge(array_strip_tags(Input::all()));
-
-	if( ! Request::secure())
-  {
-    return Redirect::secure(Request::path());
-  }
 });
 
 
