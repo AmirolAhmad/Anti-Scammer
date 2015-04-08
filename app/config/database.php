@@ -54,10 +54,10 @@ return array(
 
 		'mysql' => array(
 			'driver'    => 'mysql',
-			'host'      => 'localhost',
+			'host'      => 'us-cdbr-iron-east-02.cleardb.net',
 			'database'  => 'heroku_00d35f5f356e513',
-			'username'  => 'root',
-			'password'  => 'root',
+			'username'  => 'bc46308c3bdd58',
+			'password'  => '130f78be',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
